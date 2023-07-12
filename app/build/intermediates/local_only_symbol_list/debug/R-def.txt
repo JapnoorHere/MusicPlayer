@@ -1,0 +1,27 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable music
+drawable pause
+drawable play
+id playPauseButton
+id progressBar
+id recyclerView
+id seekbar
+id songName
+id time
+layout activity_main
+layout activity_music
+layout activity_songs_list
+layout song_item
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string hello_world
+style Base.Theme.MusicPlayer
+style Theme.MusicPlayer
+xml backup_rules
+xml data_extraction_rules
