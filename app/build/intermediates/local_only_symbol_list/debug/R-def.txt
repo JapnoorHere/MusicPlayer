@@ -2,15 +2,20 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable baseline_more_vert_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable music
+drawable next
 drawable pause
 drawable play
+drawable previous
+id icon
+id more
 id playPauseButton
-id progressBar
 id recyclerView
 id seekbar
+id singerName
 id songName
 id time
 layout activity_main

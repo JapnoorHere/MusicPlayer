@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,19 +20,15 @@ public abstract class ActivityMusicBinding extends ViewDataBinding {
   public final ImageView playPauseButton;
 
   @NonNull
-  public final ProgressBar progressBar;
-
-  @NonNull
   public final SeekBar seekbar;
 
   @NonNull
   public final TextView time;
 
   protected ActivityMusicBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView playPauseButton, ProgressBar progressBar, SeekBar seekbar, TextView time) {
+      ImageView playPauseButton, SeekBar seekbar, TextView time) {
     super(_bindingComponent, _root, _localFieldCount);
     this.playPauseButton = playPauseButton;
-    this.progressBar = progressBar;
     this.seekbar = seekbar;
     this.time = time;
   }

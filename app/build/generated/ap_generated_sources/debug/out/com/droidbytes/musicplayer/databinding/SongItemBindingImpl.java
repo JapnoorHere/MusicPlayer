@@ -14,7 +14,10 @@ public class SongItemBindingImpl extends SongItemBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.songName, 1);
+        sViewsWithIds.put(R.id.icon, 1);
+        sViewsWithIds.put(R.id.songName, 2);
+        sViewsWithIds.put(R.id.singerName, 3);
+        sViewsWithIds.put(R.id.more, 4);
     }
     // views
     @NonNull
@@ -25,11 +28,14 @@ public class SongItemBindingImpl extends SongItemBinding  {
     // Inverse Binding Event Handlers
 
     public SongItemBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private SongItemBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.TextView) bindings[1]
+            , (android.widget.ImageView) bindings[1]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

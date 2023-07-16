@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.SongItemBinding
 import java.io.File
 
@@ -25,6 +26,11 @@ class SongAdapter(private var songsListActivity: SongsListActivity, private var 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.songName.text=songsList[position].name
+        holder.binding.singerName.text=songsList[position].artist
+
+        Glide.with(songsListActivity)
+            .load(songsList[position].albumArtUri)
+            .into(holder.binding.icon)
 
         holder.itemView.setOnClickListener {
             val filepath = File(songsList[position].filePath)

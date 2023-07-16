@@ -4,6 +4,7 @@ package com.droidbytes.musicplayer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +16,23 @@ import java.lang.Object;
 
 public abstract class SongItemBinding extends ViewDataBinding {
   @NonNull
+  public final ImageView icon;
+
+  @NonNull
+  public final ImageView more;
+
+  @NonNull
+  public final TextView singerName;
+
+  @NonNull
   public final TextView songName;
 
   protected SongItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView songName) {
+      ImageView icon, ImageView more, TextView singerName, TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.icon = icon;
+    this.more = more;
+    this.singerName = singerName;
     this.songName = songName;
   }
 

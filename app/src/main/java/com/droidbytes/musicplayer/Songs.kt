@@ -1,6 +1,10 @@
 package com.droidbytes.musicplayer
 
+import android.net.Uri
+
 data class Songs(
-    var name: String = "",
-    var filePath: String = "",
-)
+    val name: String = "",
+    val filePath: String = "",
+    val albumArtUri: Uri?,
+    val artist : String =""
+    )

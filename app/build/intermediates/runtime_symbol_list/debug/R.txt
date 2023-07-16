@@ -2986,6 +2986,7 @@ int drawable abc_textfield_search_material 0x7f080076
 int drawable abc_vector_test 0x7f080077
 int drawable avd_hide_password 0x7f080078
 int drawable avd_show_password 0x7f080079
+int drawable baseline_more_vert_24 0x7f080138
 int drawable btn_checkbox_checked_mtrl 0x7f08007a
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08007b
 int drawable btn_checkbox_unchecked_mtrl 0x7f08007c
@@ -3158,6 +3159,7 @@ int drawable mtrl_switch_track_decoration 0x7f080122
 int drawable mtrl_tabs_default_indicator 0x7f080123
 int drawable music 0x7f080124
 int drawable navigation_empty_icon 0x7f080125
+int drawable next 0x7f080139
 int drawable notification_action_background 0x7f080126
 int drawable notification_bg 0x7f080127
 int drawable notification_bg_low 0x7f080128
@@ -3173,6 +3175,7 @@ int drawable notification_tile_bg 0x7f080131
 int drawable notify_panel_notification_icon_bg 0x7f080132
 int drawable pause 0x7f080133
 int drawable play 0x7f080134
+int drawable previous 0x7f08013a
 int drawable test_level_drawable 0x7f080135
 int drawable tooltip_frame_dark 0x7f080136
 int drawable tooltip_frame_light 0x7f080137
@@ -3434,6 +3437,7 @@ int id frost 0x7f0a00fd
 int id fullscreen_header 0x7f0a00fe
 int id ghost_view 0x7f0a00ff
 int id ghost_view_holder 0x7f0a0100
+int id glide_custom_view_target_tag 0x7f0a023b
 int id gone 0x7f0a0101
 int id graph 0x7f0a0102
 int id graph_wrap 0x7f0a0103
@@ -3511,6 +3515,7 @@ int id month_navigation_fragment_toggle 0x7f0a014a
 int id month_navigation_next 0x7f0a014b
 int id month_navigation_previous 0x7f0a014c
 int id month_title 0x7f0a014d
+int id more 0x7f0a023c
 int id motion_base 0x7f0a014e
 int id mtrl_anchor_parent 0x7f0a014f
 int id mtrl_calendar_day_selector_frame 0x7f0a0150
@@ -3580,7 +3585,6 @@ int id pooling_container_listener_holder_tag 0x7f0a018f
 int id position 0x7f0a0190
 int id postLayout 0x7f0a0191
 int id pressed 0x7f0a0192
-int id progressBar 0x7f0a0193
 int id progress_circular 0x7f0a0194
 int id progress_horizontal 0x7f0a0195
 int id radio 0x7f0a0196
@@ -3639,6 +3643,7 @@ int id showCustom 0x7f0a01ca
 int id showHome 0x7f0a01cb
 int id showTitle 0x7f0a01cc
 int id sin 0x7f0a01cd
+int id singerName 0x7f0a023d
 int id skipCollapsed 0x7f0a01ce
 int id skipped 0x7f0a01cf
 int id slide 0x7f0a01d0
