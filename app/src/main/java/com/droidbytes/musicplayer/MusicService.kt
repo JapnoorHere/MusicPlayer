@@ -1,7 +1,10 @@
 package com.droidbytes.musicplayer
 
 import android.app.Service
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Binder
@@ -13,10 +16,14 @@ class MusicService : Service() {
     private lateinit var mediaPlayer: MediaPlayer
     private var isPaused = false
 
+
+
     inner class MusicBinder : Binder() {
         fun getService(): MusicService = this@MusicService
     }
-
+    companion object {
+        const val ACTION_STOP = "com.example.musicapp.STOP_MUSIC"
+    }
     override fun onBind(intent: Intent?): IBinder? {
         return MusicBinder()
     }
@@ -24,6 +31,7 @@ class MusicService : Service() {
     override fun onCreate() {
         super.onCreate()
         mediaPlayer = MediaPlayer()
+        registerStopMusicReceiver()
     }
 
     fun playOrPauseMusic(uri: Uri) {
@@ -63,9 +71,30 @@ class MusicService : Service() {
     fun seekTo(position: Int) {
         mediaPlayer.seekTo(position)
     }
+    private val stopMusicReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            stopMusic()
+        }
+    }
+    private fun registerStopMusicReceiver() {
+        val filter = IntentFilter(ACTION_STOP)
+        registerReceiver(stopMusicReceiver, filter)
+    }
+    private fun stopMusic() {
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+            try {
+                mediaPlayer.prepare()
+                mediaPlayer.seekTo(0)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
 
-//    override fun onDestroy() {
-//        super.onDestroy()
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(stopMusicReceiver)
 //        mediaPlayer.release()
-//    }
+    }
 }

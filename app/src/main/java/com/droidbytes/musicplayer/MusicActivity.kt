@@ -1,5 +1,6 @@
 package com.droidbytes.musicplayer
 
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -39,7 +40,7 @@ class MusicActivity : AppCompatActivity() {
     private val updateSeekBarRunnable = object : Runnable {
         override fun run() {
             updateSeekBar()
-            handler.postDelayed(this, 1000)
+            handler.postDelayed(this, 1)
         }
     }
 
@@ -66,7 +67,7 @@ class MusicActivity : AppCompatActivity() {
 
         val musicUri = intent.getStringExtra("uri")
         val uri = Uri.parse(musicUri)
-
+//        updatePlayPauseButton()
         playPauseButton.setOnClickListener {
             if (musicBound) {
                 musicService.playOrPauseMusic(uri)
@@ -130,11 +131,12 @@ class MusicActivity : AppCompatActivity() {
         return String.format("%02d:%02d", minutes, seconds)
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun updatePlayPauseButton() {
         if (musicService.isMusicPlaying()) {
-            playPauseButton.setBackgroundResource(R.drawable.pause)
+            playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.pause))
         } else {
-            playPauseButton.setBackgroundResource(R.drawable.play)
+            playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.play))
         }
     }
 }

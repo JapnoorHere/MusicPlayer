@@ -57,7 +57,7 @@
 35        android:theme="@style/Theme.MusicPlayer" >
 35-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:18:9-49
 36        <service
-36-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:20:9-23:47
+36-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:20:9-23:38
 37            android:name="com.droidbytes.musicplayer.MusicService"
 37-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:21:13-41
 38            android:enabled="true"
