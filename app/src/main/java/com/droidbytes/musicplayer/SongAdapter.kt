@@ -42,8 +42,8 @@ class SongAdapter(
             .into(holder.binding.icon)
 
         holder.itemView.setOnClickListener {
-            val stopIntent = Intent(MusicService.ACTION_STOP)
-            songsListActivity.sendBroadcast(stopIntent)
+//            val stopIntent = Intent(MusicService.ACTION_STOP)
+//            songsListActivity.sendBroadcast(stopIntent)
 
 //            val intent1 = Intent(songsListActivity, MusicService::class.java)
 //            lateinit var musicService : MusicService

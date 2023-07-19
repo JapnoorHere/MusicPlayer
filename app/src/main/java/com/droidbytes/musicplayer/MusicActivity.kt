@@ -22,19 +22,23 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import androidx.lifecycle.ViewModelProvider
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
+import java.io.IOException
 
 class MusicActivity : AppCompatActivity() {
     lateinit var binding: ActivityMusicBinding
-    private lateinit var musicService: MusicService
     private var musicBound = false
     private lateinit var playPauseButton: ImageView
     private lateinit var musicDurationText: TextView
     private lateinit var seekBar: SeekBar
     private var handler = Handler()
+    private lateinit var mediaPlayer: MediaPlayer
+    private var isPaused = false
+    private lateinit var mediaPlayerViewModel: MediaPlayerViewModel
 
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -44,22 +48,24 @@ class MusicActivity : AppCompatActivity() {
         }
     }
 
-    private val musicConnection = object : ServiceConnection {
-        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            val binder = service as MusicService.MusicBinder
-            musicService = binder.getService()
-            musicBound = true
-        }
-
-        override fun onServiceDisconnected(name: ComponentName?) {
-            musicBound = false
-        }
-    }
+//    private val musicConnection = object : ServiceConnection {
+//        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+//            val binder = service as MusicService.MusicBinder
+//            musicService = binder.getService()
+//            musicBound = true
+//        }
+//
+//        override fun onServiceDisconnected(name: ComponentName?) {
+//            musicBound = false
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMusicBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mediaPlayer = MediaPlayer()
 
         playPauseButton = binding.playPauseButton
         musicDurationText = binding.time
@@ -68,9 +74,11 @@ class MusicActivity : AppCompatActivity() {
         val musicUri = intent.getStringExtra("uri")
         val uri = Uri.parse(musicUri)
 //        updatePlayPauseButton()
+        mediaPlayerViewModel = ViewModelProvider(this).get(MediaPlayerViewModel::class.java)
+
         playPauseButton.setOnClickListener {
             if (musicBound) {
-                musicService.playOrPauseMusic(uri)
+                playOrPauseMusic(uri)
                 updatePlayPauseButton()
             }
         }
@@ -83,16 +91,23 @@ class MusicActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 if (musicBound) {
                     val progress = seekBar.progress
-                    musicService.seekTo(progress)
+                    seekTo(progress)
                 }
             }
         })
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayerViewModel.isPlaying = mediaPlayer.isPlaying
+    }
+
     override fun onStart() {
         super.onStart()
-        val musicIntent = Intent(this, MusicService::class.java)
-        bindService(musicIntent, musicConnection, Context.BIND_AUTO_CREATE)
+        musicBound = true
+        println("yes? -> ${mediaPlayerViewModel .isPlaying}")
+//        val musicIntent = Intent(this, MusicService::class.java)
+//        bindService(musicIntent, musicConnection, Context.BIND_AUTO_CREATE)
     }
 
 //    override fun onStop() {
@@ -103,9 +118,64 @@ class MusicActivity : AppCompatActivity() {
 //        }
 //    }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("isPlaying", mediaPlayer.isPlaying)
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val isPlaying = savedInstanceState.getBoolean("isPlaying", false)
+        // Restore the media player state here
+        // For example, you can start playing the music again if it was playing before
+        println(isPlaying)
+        if (isPlaying) {
+            println("yes? -> ${mediaPlayer.isPlaying}")
+            mediaPlayer.pause()
+            mediaPlayer.stop()
+            mediaPlayer.reset()
+        }
+    }
+
+    fun playOrPauseMusic(uri: Uri) {
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+            isPaused = true
+        } else {
+            if (isPaused) {
+                mediaPlayer.start()
+                isPaused = false
+            } else {
+                try {
+                    mediaPlayer.reset()
+                    mediaPlayer.setDataSource(applicationContext,uri)
+                    mediaPlayer.prepare()
+                    mediaPlayer.start()
+                    isPaused = false
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
+    fun getCurrentPosition(): Int {
+        return mediaPlayer.currentPosition
+    }
+
+    fun getDuration(): Int {
+        return mediaPlayer.duration
+    }
+
     override fun onResume() {
         super.onResume()
         handler.postDelayed(updateSeekBarRunnable, 1000)
+    }
+    fun seekTo(position: Int) {
+        mediaPlayer.seekTo(position)
+    }
+
+    fun isMusicPlaying(): Boolean {
+        return mediaPlayer.isPlaying
     }
 
     override fun onPause() {
@@ -115,8 +185,8 @@ class MusicActivity : AppCompatActivity() {
 
     private fun updateSeekBar() {
         if (musicBound) {
-            val currentPosition = musicService.getCurrentPosition()
-            val duration = musicService.getDuration()
+            val currentPosition = getCurrentPosition()
+            val duration = getDuration()
             val formattedCurrentPosition = formatTime(currentPosition)
             val formattedDuration = formatTime(duration)
             musicDurationText.text = "$formattedCurrentPosition / $formattedDuration"
@@ -133,7 +203,7 @@ class MusicActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun updatePlayPauseButton() {
-        if (musicService.isMusicPlaying()) {
+        if (isMusicPlaying()) {
             playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.pause))
         } else {
             playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.play))
