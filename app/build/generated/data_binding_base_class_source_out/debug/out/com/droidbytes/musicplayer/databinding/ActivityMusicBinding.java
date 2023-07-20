@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,23 +13,33 @@ import androidx.databinding.ViewDataBinding;
 import com.droidbytes.musicplayer.R;
 import java.lang.Deprecated;
 import java.lang.Object;
+import me.tankery.lib.circularseekbar.CircularSeekBar;
 
 public abstract class ActivityMusicBinding extends ViewDataBinding {
   @NonNull
   public final ImageView playPauseButton;
 
   @NonNull
-  public final SeekBar seekbar;
+  public final CircularSeekBar seekBar;
 
   @NonNull
-  public final TextView time;
+  public final TextView singerName;
+
+  @NonNull
+  public final ImageView songIcon;
+
+  @NonNull
+  public final TextView songName;
 
   protected ActivityMusicBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView playPauseButton, SeekBar seekbar, TextView time) {
+      ImageView playPauseButton, CircularSeekBar seekBar, TextView singerName, ImageView songIcon,
+      TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.playPauseButton = playPauseButton;
-    this.seekbar = seekbar;
-    this.time = time;
+    this.seekBar = seekBar;
+    this.singerName = singerName;
+    this.songIcon = songIcon;
+    this.songName = songName;
   }
 
   @NonNull

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-36:/values-v18/values-v18.xml",
+            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-37:/values-v18/values-v18.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\6f26defcd9545a930a929752398275fc\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",

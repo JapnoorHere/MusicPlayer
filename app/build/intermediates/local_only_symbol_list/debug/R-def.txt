@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+attr? progressDrawable
+attr? thumbDrawable
 color black
 color white
 drawable baseline_more_vert_24
@@ -10,14 +12,15 @@ drawable next
 drawable pause
 drawable play
 drawable previous
+drawable seek_bar
 id icon
 id more
 id playPauseButton
 id recyclerView
-id seekbar
+id seekBar
 id singerName
+id songIcon
 id songName
-id time
 layout activity_main
 layout activity_music
 layout activity_songs_list
@@ -28,5 +31,6 @@ string app_name
 string hello_world
 style Base.Theme.MusicPlayer
 style Theme.MusicPlayer
+styleable CircularSeekBar progressDrawable thumbDrawable
 xml backup_rules
 xml data_extraction_rules

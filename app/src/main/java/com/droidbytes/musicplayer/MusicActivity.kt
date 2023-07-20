@@ -23,6 +23,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
@@ -32,8 +33,7 @@ import java.io.IOException
 class MusicActivity : AppCompatActivity() {
     lateinit var binding: ActivityMusicBinding
     private var musicBound = false
-    private lateinit var playPauseButton: ImageView
-    private lateinit var musicDurationText: TextView
+//    private lateinit var musicDurationText: TextView
     private lateinit var seekBar: SeekBar
     private var handler = Handler()
     private lateinit var mediaPlayer: MediaPlayer
@@ -67,31 +67,47 @@ class MusicActivity : AppCompatActivity() {
 
         mediaPlayer = MediaPlayer()
 
-        playPauseButton = binding.playPauseButton
-        musicDurationText = binding.time
-        seekBar = binding.seekbar
+        binding.songName.text = intent.getStringExtra("songName")
+        binding.singerName.text = intent.getStringExtra("singerName")
+        Glide.with(this)
+            .load(intent.getStringExtra("songIcon"))
+            .into(binding.songIcon)
+        intent.getStringExtra("songIcon")
+
+
+//        musicDurationText = binding.time
 
         val musicUri = intent.getStringExtra("uri")
         val uri = Uri.parse(musicUri)
 //        updatePlayPauseButton()
         mediaPlayerViewModel = ViewModelProvider(this).get(MediaPlayerViewModel::class.java)
 
-        playPauseButton.setOnClickListener {
+        binding.playPauseButton.setOnClickListener {
             if (musicBound) {
                 playOrPauseMusic(uri)
                 updatePlayPauseButton()
             }
         }
 
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {}
+        binding.seekBar.setOnSeekBarChangeListener(object : me.tankery.lib.circularseekbar.CircularSeekBar.OnCircularSeekBarChangeListener {
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
 
-            override fun onStopTrackingTouch(seekBar: SeekBar) {
+            override fun onProgressChanged(
+                circularSeekBar: me.tankery.lib.circularseekbar.CircularSeekBar?,
+                progress: Float,
+                fromUser: Boolean,
+            ) {
+            }
+
+
+            override fun onStartTrackingTouch(seekBar: me.tankery.lib.circularseekbar.CircularSeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: me.tankery.lib.circularseekbar.CircularSeekBar?) {
                 if (musicBound) {
-                    val progress = seekBar.progress
-                    seekTo(progress)
+                    val progress = seekBar!!.progress
+//                    seekTo(progress)
+                    mediaPlayer.seekTo(progress.toInt())
                 }
             }
         })
@@ -189,9 +205,9 @@ class MusicActivity : AppCompatActivity() {
             val duration = getDuration()
             val formattedCurrentPosition = formatTime(currentPosition)
             val formattedDuration = formatTime(duration)
-            musicDurationText.text = "$formattedCurrentPosition / $formattedDuration"
-            seekBar.max = duration
-            seekBar.progress = currentPosition
+//            musicDurationText.text = "$formattedCurrentPosition / $formattedDuration"
+            binding.seekBar.max = duration.toFloat()
+            binding.seekBar.progress = currentPosition.toFloat()
         }
     }
 
@@ -204,9 +220,9 @@ class MusicActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun updatePlayPauseButton() {
         if (isMusicPlaying()) {
-            playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.pause))
+            binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
         } else {
-            playPauseButton.setBackgroundDrawable(resources.getDrawable(R.drawable.play))
+            binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
         }
     }
 }

@@ -6,33 +6,104 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".AudioActivity">
+        tools:context=".AudioActivity"
+        android:gravity="center"
+        >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="400dp"
-            android:src="@drawable/music"
-            android:layout_margin="50dp"
-            />
+
+
+<!--        <SeekBar-->
+<!--            android:id="@+id/seekbar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:background="@drawable/seek_bar"-->
+<!--            android:thumb="@null" />-->
+
+<!--        <SeekBar-->
+<!--            android:id="@+id/seekBar"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:progressDrawable="@drawable/seek_bar"-->
+<!--            android:progress="70"-->
+<!--             />-->
+
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:00 / 00:00"
-            android:textSize="17sp"
-            android:layout_marginStart="30dp"
-            android:id="@+id/time"
-            />
-
-        <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/seekbar"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="5dp"
+            android:text="Song Name"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/songName"
             />
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Singer Name"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/singerName"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+         <androidx.cardview.widget.CardView
+             android:layout_width="250dp"
+             android:layout_height="250dp"
+             app:cardCornerRadius="200dp"
+             android:layout_centerInParent="true"
+             >
+             <ImageView
+                 android:id="@+id/songIcon"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:src="@drawable/music"
+                 android:scaleType="fitXY"
+                 />
+
+         </androidx.cardview.widget.CardView>
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            app:cs_circle_style = "round"
+            app:cs_progress = "0"
+            app:cs_max = "100"
+            app:cs_move_outside_circle = "true"
+            app:cs_maintain_equal_circle = "true"
+            app:cs_lock_enabled = "true"
+            app:cs_circle_x_radius = "50dp"
+            app:cs_circle_y_radius = "100dp"
+            app:cs_circle_stroke_width = "12dp"
+            app:cs_disable_pointer = "false"
+            app:cs_pointer_stroke_width = "20dp"
+            app:cs_circle_fill = "@color/white"
+            app:cs_circle_color = "#ECECEC"
+            app:cs_circle_progress_color = "#A2CF6E"
+            app:cs_pointer_color = "#608F36"
+            app:cs_disable_progress_glow = "true"
+            />
+        </RelativeLayout>
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"

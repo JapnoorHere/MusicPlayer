@@ -14,9 +14,11 @@ public class ActivityMusicBindingImpl extends ActivityMusicBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.time, 1);
-        sViewsWithIds.put(R.id.seekbar, 2);
-        sViewsWithIds.put(R.id.playPauseButton, 3);
+        sViewsWithIds.put(R.id.songName, 1);
+        sViewsWithIds.put(R.id.singerName, 2);
+        sViewsWithIds.put(R.id.songIcon, 3);
+        sViewsWithIds.put(R.id.seekBar, 4);
+        sViewsWithIds.put(R.id.playPauseButton, 5);
     }
     // views
     @NonNull
@@ -27,12 +29,14 @@ public class ActivityMusicBindingImpl extends ActivityMusicBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityMusicBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ActivityMusicBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.ImageView) bindings[5]
+            , (me.tankery.lib.circularseekbar.CircularSeekBar) bindings[4]
+            , (android.widget.TextView) bindings[2]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.SeekBar) bindings[2]
             , (android.widget.TextView) bindings[1]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];

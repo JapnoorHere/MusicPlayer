@@ -67,6 +67,10 @@ class SongAdapter(
             val uri = Uri.fromFile(filepath)
             val intent = Intent(songsListActivity, MusicActivity::class.java)
             intent.putExtra("uri", uri.toString())
+            intent.putExtra("songName", songsList[position].name)
+            intent.putExtra("singerName", songsList[position].artist)
+            intent.putExtra("songIcon", songsList[position].albumArtUri.toString())
+
             songsListActivity.startActivity(intent)
         }
     }

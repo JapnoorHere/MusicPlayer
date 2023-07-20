@@ -9,4 +9,8 @@
         
     </style>
     <style name="Theme.MusicPlayer" parent="Base.Theme.MusicPlayer"/>
+    <declare-styleable name="CircularSeekBar">
+        <attr format="reference" name="progressDrawable"/>
+        <attr format="reference" name="thumbDrawable"/>
+    </declare-styleable>
 </resources>

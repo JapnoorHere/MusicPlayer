@@ -429,6 +429,33 @@ attr counterOverflowTextColor
 attr counterTextAppearance
 attr counterTextColor
 attr crossfade
+attr cs_circle_color
+attr cs_circle_fill
+attr cs_circle_progress_color
+attr cs_circle_stroke_width
+attr cs_circle_style
+attr cs_circle_x_radius
+attr cs_circle_y_radius
+attr cs_disable_pointer
+attr cs_disable_progress_glow
+attr cs_end_angle
+attr cs_hide_progress_when_empty
+attr cs_lock_enabled
+attr cs_maintain_equal_circle
+attr cs_max
+attr cs_move_outside_circle
+attr cs_negative_enabled
+attr cs_pointer_alpha_ontouch
+attr cs_pointer_angle
+attr cs_pointer_color
+attr cs_pointer_halo_border_width
+attr cs_pointer_halo_color
+attr cs_pointer_halo_color_ontouch
+attr cs_pointer_halo_width
+attr cs_pointer_stroke_width
+attr cs_progress
+attr cs_start_angle
+attr cs_use_custom_radii
 attr currentState
 attr curveFit
 attr customBoolean
@@ -980,6 +1007,7 @@ attr preserveIconSpacing
 attr pressedTranslationZ
 attr progressBarPadding
 attr progressBarStyle
+attr progressDrawable
 attr quantizeMotionInterpolator
 attr quantizeMotionPhase
 attr quantizeMotionSteps
@@ -1229,6 +1257,7 @@ attr textureWidth
 attr theme
 attr thickness
 attr thumbColor
+attr thumbDrawable
 attr thumbElevation
 attr thumbIcon
 attr thumbIconTint
@@ -3177,6 +3206,7 @@ drawable notify_panel_notification_icon_bg
 drawable pause
 drawable play
 drawable previous
+drawable seek_bar
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3280,6 +3310,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id butt
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3597,6 +3628,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id round
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3633,7 +3665,7 @@ id search_view_status_bar_spacer
 id search_view_toolbar
 id search_view_toolbar_container
 id search_voice_btn
-id seekbar
+id seekBar
 id select_dialog_listview
 id selected
 id selection_type
@@ -3652,6 +3684,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id songIcon
 id songName
 id south
 id spacer
@@ -5370,6 +5403,7 @@ styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkM
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
+styleable CircularSeekBar progressDrawable thumbDrawable
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance collapsedTitleTextColor contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance expandedTitleTextColor extraMultilineHeightEnabled forceApplySystemWindowInsetTop maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleCollapseMode titleEnabled titlePositionInterpolator titleTextEllipsize toolbarId
@@ -5495,6 +5529,7 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
+styleable cs_CircularSeekBar cs_circle_color cs_circle_fill cs_circle_progress_color cs_circle_stroke_width cs_circle_style cs_circle_x_radius cs_circle_y_radius cs_disable_pointer cs_disable_progress_glow cs_end_angle cs_hide_progress_when_empty cs_lock_enabled cs_maintain_equal_circle cs_max cs_move_outside_circle cs_negative_enabled cs_pointer_alpha_ontouch cs_pointer_angle cs_pointer_color cs_pointer_halo_border_width cs_pointer_halo_color cs_pointer_halo_color_ontouch cs_pointer_halo_width cs_pointer_stroke_width cs_progress cs_start_angle cs_use_custom_radii
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
