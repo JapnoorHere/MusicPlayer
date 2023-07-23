@@ -5,25 +5,33 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Binder
+import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import java.io.IOException
+import java.lang.Exception
+import com.droidbytes.musicplayer.MusicActivity
 
-class MusicService : Service() {
+class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
 
-    private lateinit var mediaPlayer: MediaPlayer
+    lateinit var mediaPlayer: MediaPlayer
     private var isPaused = false
+    lateinit var audioManager: AudioManager
+    private lateinit var runnable: Runnable
 
 
 
     inner class MusicBinder : Binder() {
-        fun getService(): MusicService = this@MusicService
+        fun getService(): MusicService {
+          return this@MusicService
+        }
     }
-    companion object {
-        const val ACTION_STOP = "com.example.musicapp.STOP_MUSIC"
-    }
+
+
     override fun onBind(intent: Intent?): IBinder? {
         return MusicBinder()
     }
@@ -31,7 +39,29 @@ class MusicService : Service() {
     override fun onCreate() {
         super.onCreate()
         mediaPlayer = MediaPlayer()
-        registerStopMusicReceiver()
+    }
+
+    fun createMediaPlayer(){
+        try{
+            if(mediaPlayer == null){
+                mediaPlayer= MediaPlayer()
+                mediaPlayer.reset()
+                mediaPlayer.setDataSource(MusicActivity.songsList[MusicActivity.songPosition].filePath)
+                mediaPlayer.prepare()
+            }
+        }
+        catch (e : Exception) {
+            return
+        }
+
+    }
+
+    fun seekBarSetup(){
+        runnable = Runnable {
+            MusicActivity.binding.seekBar.progress = mediaPlayer.currentPosition.toFloat()
+            Handler(Looper.getMainLooper()).postDelayed(runnable, 200)
+        }
+        Handler(Looper.getMainLooper()).postDelayed(runnable, 0)
     }
 
     fun playOrPauseMusic(uri: Uri) {
@@ -71,15 +101,8 @@ class MusicService : Service() {
     fun seekTo(position: Int) {
         mediaPlayer.seekTo(position)
     }
-    private val stopMusicReceiver: BroadcastReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            stopMusic()
-        }
-    }
-    private fun registerStopMusicReceiver() {
-        val filter = IntentFilter(ACTION_STOP)
-        registerReceiver(stopMusicReceiver, filter)
-    }
+
+
     private fun stopMusic() {
         if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
@@ -94,7 +117,20 @@ class MusicService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(stopMusicReceiver)
 //        mediaPlayer.release()
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        return START_STICKY
+    }
+
+    override fun onAudioFocusChange(focusChange: Int) {
+        if(focusChange <= 0){
+            //pause music
+            MusicActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
+//            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
+            MusicActivity.isPlaying = false
+            mediaPlayer.pause()
+        }
     }
 }

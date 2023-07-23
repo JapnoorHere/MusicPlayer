@@ -45,7 +45,7 @@ class SongsListActivity : AppCompatActivity() {
                 val artist = it.getString(artistIndex)
                 val albumId = it.getLong(albumIdIndex)
                 val albumArtUri = getAlbumArtUri(albumId)
-                val song = Songs(title, filePath,albumArtUri,artist)
+                val song = Songs(title, filePath,albumArtUri.toString(),artist)
                 songsList.add(song)
                 println("Song $songsList")
             }

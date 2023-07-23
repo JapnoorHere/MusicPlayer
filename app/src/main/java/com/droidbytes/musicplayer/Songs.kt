@@ -1,10 +1,10 @@
 package com.droidbytes.musicplayer
 
-import android.net.Uri
+import java.io.Serializable
 
 data class Songs(
     val name: String = "",
     val filePath: String = "",
-    val albumArtUri: Uri?,
+    val albumArtUri: String?,
     val artist : String =""
-    )
+ ) : Serializable

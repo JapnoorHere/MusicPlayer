@@ -6,7 +6,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.content.pm.PackageManager
+import android.media.AudioManager
 import android.media.MediaPlayer
+import android.media.audiofx.LoudnessEnhancer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +21,7 @@ import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
@@ -30,100 +33,130 @@ import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import java.io.IOException
 
-class MusicActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMusicBinding
-    private var musicBound = false
-//    private lateinit var musicDurationText: TextView
-    private lateinit var seekBar: SeekBar
-    private var handler = Handler()
-    private lateinit var mediaPlayer: MediaPlayer
-    private var isPaused = false
-    private lateinit var mediaPlayerViewModel: MediaPlayerViewModel
+class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
 
-
-    private val updateSeekBarRunnable = object : Runnable {
-        override fun run() {
-            updateSeekBar()
-            handler.postDelayed(this, 1)
-        }
+    companion object {
+        var musicBound = false
+        lateinit var binding: ActivityMusicBinding
+        var musicService: MusicService? = null
+        lateinit var songsList: ArrayList<Songs>
+        private var handler = Handler()
+        var isPlaying = false
+        var songPosition: Int = 0
     }
 
-//    private val musicConnection = object : ServiceConnection {
-//        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-//            val binder = service as MusicService.MusicBinder
-//            musicService = binder.getService()
-//            musicBound = true
-//        }
-//
-//        override fun onServiceDisconnected(name: ComponentName?) {
-//            musicBound = false
+//    private val updateSeekBarRunnable = object : Runnable {
+//        override fun run() {
+//            updateSeekBar()
+//            handler.postDelayed(this, 100)
 //        }
 //    }
+
+    private val musicConnection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            val binder = service as MusicService.MusicBinder
+            musicService = binder.getService()
+            musicBound = true
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            musicBound = false
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMusicBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        songsList = ArrayList()
 
-        mediaPlayer = MediaPlayer()
-
-        binding.songName.text = intent.getStringExtra("songName")
-        binding.singerName.text = intent.getStringExtra("singerName")
-        Glide.with(this)
-            .load(intent.getStringExtra("songIcon"))
-            .into(binding.songIcon)
-        intent.getStringExtra("songIcon")
-
+        songsList = intent.getSerializableExtra("songsList") as ArrayList<Songs>
+        val pos = intent.getStringExtra("songPosition").toString()
+        songPosition = Integer.parseInt(pos)
 
 //        musicDurationText = binding.time
 
-        val musicUri = intent.getStringExtra("uri")
-        val uri = Uri.parse(musicUri)
+        binding.singerName.text = songsList[songPosition].artist
+        binding.songName.text = songsList[songPosition].name
+        Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
+            .into(binding.songIcon)
+
+        println("ethe" + songsList)
+
 //        updatePlayPauseButton()
-        mediaPlayerViewModel = ViewModelProvider(this).get(MediaPlayerViewModel::class.java)
 
         binding.playPauseButton.setOnClickListener {
-            if (musicBound) {
-                playOrPauseMusic(uri)
-                updatePlayPauseButton()
+            if (isPlaying) {
+                pauseMusic()
+            } else {
+                playMusic()
             }
         }
 
-        binding.seekBar.setOnSeekBarChangeListener(object : me.tankery.lib.circularseekbar.CircularSeekBar.OnCircularSeekBarChangeListener {
-
-
+        binding.seekBar.setOnSeekBarChangeListener(object :
+            me.tankery.lib.circularseekbar.CircularSeekBar.OnCircularSeekBarChangeListener {
             override fun onProgressChanged(
                 circularSeekBar: me.tankery.lib.circularseekbar.CircularSeekBar?,
                 progress: Float,
                 fromUser: Boolean,
             ) {
+                if(fromUser){
+                    musicService!!.mediaPlayer.seekTo(progress.toInt())
+                }
             }
-
 
             override fun onStartTrackingTouch(seekBar: me.tankery.lib.circularseekbar.CircularSeekBar?) {
             }
 
             override fun onStopTrackingTouch(seekBar: me.tankery.lib.circularseekbar.CircularSeekBar?) {
-                if (musicBound) {
-                    val progress = seekBar!!.progress
-//                    seekTo(progress)
-                    mediaPlayer.seekTo(progress.toInt())
-                }
+
             }
         })
     }
 
+    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+        if (musicService == null) {
+            val binder = service as MusicService.MusicBinder
+            musicService = binder.getService()
+            musicService!!.audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
+            musicService!!.audioManager.requestAudioFocus(
+                musicService,
+                AudioManager.STREAM_MUSIC,
+                AudioManager.AUDIOFOCUS_GAIN
+            )
+        }
+        createMediaPlayer()
+        musicService!!.seekBarSetup()
+    }
+
+    override fun onServiceDisconnected(name: ComponentName?) {
+        musicService = null
+    }
+
+
+    private fun createMediaPlayer() {
+        try {
+            if (musicService?.mediaPlayer == null) { musicService?.mediaPlayer = MediaPlayer() }
+            musicService!!.mediaPlayer.reset()
+            musicService!!.mediaPlayer.setDataSource(songsList[songPosition].filePath)
+            musicService!!.mediaPlayer.prepare()
+            musicService!!.mediaPlayer.setOnCompletionListener(this@MusicActivity)
+            playMusic()
+        } catch (e: Exception) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayerViewModel.isPlaying = mediaPlayer.isPlaying
     }
 
     override fun onStart() {
         super.onStart()
         musicBound = true
-        println("yes? -> ${mediaPlayerViewModel .isPlaying}")
-//        val musicIntent = Intent(this, MusicService::class.java)
-//        bindService(musicIntent, musicConnection, Context.BIND_AUTO_CREATE)
+        val musicIntent = Intent(this, MusicService::class.java)
+        bindService(musicIntent, musicConnection, Context.BIND_AUTO_CREATE)
+        startService(intent)
     }
 
 //    override fun onStop() {
@@ -134,77 +167,49 @@ class MusicActivity : AppCompatActivity() {
 //        }
 //    }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBoolean("isPlaying", mediaPlayer.isPlaying)
-    }
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        val isPlaying = savedInstanceState.getBoolean("isPlaying", false)
-        // Restore the media player state here
-        // For example, you can start playing the music again if it was playing before
-        println(isPlaying)
-        if (isPlaying) {
-            println("yes? -> ${mediaPlayer.isPlaying}")
-            mediaPlayer.pause()
-            mediaPlayer.stop()
-            mediaPlayer.reset()
-        }
+    private fun playMusic() {
+        isPlaying = true
+        musicService!!.mediaPlayer.start()
+        binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
     }
 
-    fun playOrPauseMusic(uri: Uri) {
-        if (mediaPlayer.isPlaying) {
-            mediaPlayer.pause()
-            isPaused = true
-        } else {
-            if (isPaused) {
-                mediaPlayer.start()
-                isPaused = false
-            } else {
-                try {
-                    mediaPlayer.reset()
-                    mediaPlayer.setDataSource(applicationContext,uri)
-                    mediaPlayer.prepare()
-                    mediaPlayer.start()
-                    isPaused = false
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-            }
-        }
+    private fun pauseMusic() {
+        isPlaying = false
+        musicService!!.mediaPlayer.pause()
+        binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
     }
 
     fun getCurrentPosition(): Int {
-        return mediaPlayer.currentPosition
+        return musicService!!.mediaPlayer.currentPosition
     }
 
     fun getDuration(): Int {
-        return mediaPlayer.duration
+        return musicService!!.mediaPlayer.duration
     }
 
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(updateSeekBarRunnable, 1000)
+//        handler.postDelayed(updateSeekBarRunnable, 1000)
     }
-    fun seekTo(position: Int) {
-        mediaPlayer.seekTo(position)
-    }
+//    fun seekTo(position: Int) {
+//        mediaPlayer.seekTo(position)
+//    }
 
     fun isMusicPlaying(): Boolean {
-        return mediaPlayer.isPlaying
+        return musicService!!.mediaPlayer.isPlaying
     }
 
     override fun onPause() {
         super.onPause()
-        handler.removeCallbacks(updateSeekBarRunnable)
+//        handler.removeCallbacks(updateSeekBarRunnable)
     }
 
     private fun updateSeekBar() {
         if (musicBound) {
-            val currentPosition = getCurrentPosition()
-            val duration = getDuration()
-            val formattedCurrentPosition = formatTime(currentPosition)
-            val formattedDuration = formatTime(duration)
+            val currentPosition = musicService!!.mediaPlayer.currentPosition
+            val duration = musicService!!.mediaPlayer.duration
+//            val formattedCurrentPosition = formatTime(currentPosition)
+//            val formattedDuration = formatTime(duration)
 //            musicDurationText.text = "$formattedCurrentPosition / $formattedDuration"
             binding.seekBar.max = duration.toFloat()
             binding.seekBar.progress = currentPosition.toFloat()
@@ -217,12 +222,7 @@ class MusicActivity : AppCompatActivity() {
         return String.format("%02d:%02d", minutes, seconds)
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    private fun updatePlayPauseButton() {
-        if (isMusicPlaying()) {
-            binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
-        } else {
-            binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
-        }
+    override fun onCompletion(p0: MediaPlayer?) {
+        createMediaPlayer()
     }
 }

@@ -63,14 +63,9 @@ class SongAdapter(
 //            }
 //            songsListActivity.bindService(intent1, musicConnection, Context.BIND_AUTO_CREATE)
 
-            val filepath = File(songsList[position].filePath)
-            val uri = Uri.fromFile(filepath)
             val intent = Intent(songsListActivity, MusicActivity::class.java)
-            intent.putExtra("uri", uri.toString())
-            intent.putExtra("songName", songsList[position].name)
-            intent.putExtra("singerName", songsList[position].artist)
-            intent.putExtra("songIcon", songsList[position].albumArtUri.toString())
-
+            intent.putExtra("songsList", songsList)
+            intent.putExtra("songPosition", position.toString())
             songsListActivity.startActivity(intent)
         }
     }
