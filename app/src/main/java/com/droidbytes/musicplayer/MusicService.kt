@@ -56,13 +56,13 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
 
     }
 
-    fun seekBarSetup(){
-        runnable = Runnable {
-            MusicActivity.binding.seekBar.progress = mediaPlayer.currentPosition.toFloat()
-            Handler(Looper.getMainLooper()).postDelayed(runnable, 200)
-        }
-        Handler(Looper.getMainLooper()).postDelayed(runnable, 0)
-    }
+//    fun seekBarSetup(){
+//        runnable = Runnable {
+//            MusicActivity.binding.seekBar.progress = mediaPlayer.currentPosition.toFloat()
+//            Handler(Looper.getMainLooper()).postDelayed(runnable, 200)
+//        }
+//        Handler(Looper.getMainLooper()).postDelayed(runnable, 0)
+//    }
 
     fun playOrPauseMusic(uri: Uri) {
         if (mediaPlayer.isPlaying) {

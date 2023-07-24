@@ -23,6 +23,7 @@ class SongsListActivity : AppCompatActivity() {
         binding.recyclerView.adapter=songAdapter
 
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
         val projection = arrayOf(
             Media._ID,
             Media.TITLE,
@@ -30,7 +31,7 @@ class SongsListActivity : AppCompatActivity() {
             Media.ALBUM_ID,
             Media.ARTIST
         )
-        val cursor = contentResolver.query(uri,projection,null,null,null)
+        val cursor = contentResolver.query(uri,projection,selection,null,null)
         cursor?.use {
             val idIndex = it.getColumnIndexOrThrow(Media._ID)
             val titleIndex = it.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
@@ -49,6 +50,9 @@ class SongsListActivity : AppCompatActivity() {
                 songsList.add(song)
                 println("Song $songsList")
             }
+        }
+        songsList.sortBy {
+            it.name
         }
         songAdapter=SongAdapter(this@SongsListActivity,songsList)
         binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)

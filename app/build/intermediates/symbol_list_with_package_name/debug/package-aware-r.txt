@@ -1420,6 +1420,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color darkgreen
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1476,6 +1477,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lightGreen
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3583,6 +3585,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nextButton
 id noScroll
 id noState
 id none
@@ -3617,6 +3620,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id prevButton
 id progress_circular
 id progress_horizontal
 id radio

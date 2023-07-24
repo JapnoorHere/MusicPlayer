@@ -3,6 +3,8 @@ local
 attr? progressDrawable
 attr? thumbDrawable
 color black
+color darkgreen
+color lightGreen
 color white
 drawable baseline_more_vert_24
 drawable ic_launcher_background
@@ -15,7 +17,9 @@ drawable previous
 drawable seek_bar
 id icon
 id more
+id nextButton
 id playPauseButton
+id prevButton
 id recyclerView
 id seekBar
 id singerName

@@ -45,22 +45,32 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         var songPosition: Int = 0
     }
 
-//    private val updateSeekBarRunnable = object : Runnable {
-//        override fun run() {
-//            updateSeekBar()
-//            handler.postDelayed(this, 100)
-//        }
-//    }
+    private val updateSeekBarRunnable = object : Runnable {
+        override fun run() {
+            updateSeekBar()
+            handler.postDelayed(this, 100)
+        }
+    }
 
     private val musicConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            val binder = service as MusicService.MusicBinder
-            musicService = binder.getService()
-            musicBound = true
+            if (musicService == null) {
+                val binder = service as MusicService.MusicBinder
+                musicService = binder.getService()
+                musicService!!.audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
+                musicService!!.audioManager.requestAudioFocus(
+                    musicService,
+                    AudioManager.STREAM_MUSIC,
+                    AudioManager.AUDIOFOCUS_GAIN
+                )
+            }
+            createMediaPlayer()
+//            musicService!!.seekBarSetup()
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
             musicBound = false
+            musicService = null
         }
     }
 
@@ -76,14 +86,21 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
 //        musicDurationText = binding.time
 
-        binding.singerName.text = songsList[songPosition].artist
-        binding.songName.text = songsList[songPosition].name
-        Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
-            .into(binding.songIcon)
+        setMusicLayout()
 
         println("ethe" + songsList)
 
 //        updatePlayPauseButton()
+
+        binding.nextButton.setOnClickListener {
+            nextSong()
+        }
+
+        binding.prevButton.setOnClickListener {
+            prevSong()
+        }
+
+
 
         binding.playPauseButton.setOnClickListener {
             if (isPlaying) {
@@ -109,24 +126,14 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
             }
 
             override fun onStopTrackingTouch(seekBar: me.tankery.lib.circularseekbar.CircularSeekBar?) {
-
+                musicService!!.mediaPlayer.seekTo(seekBar!!.progress.toInt())
             }
         })
     }
 
     override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        if (musicService == null) {
-            val binder = service as MusicService.MusicBinder
-            musicService = binder.getService()
-            musicService!!.audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
-            musicService!!.audioManager.requestAudioFocus(
-                musicService,
-                AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN
-            )
-        }
-        createMediaPlayer()
-        musicService!!.seekBarSetup()
+        println("service yes")
+
     }
 
     override fun onServiceDisconnected(name: ComponentName?) {
@@ -136,15 +143,49 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
     private fun createMediaPlayer() {
         try {
-            if (musicService?.mediaPlayer == null) { musicService?.mediaPlayer = MediaPlayer() }
+            if (musicService!!.mediaPlayer == null) {
+                musicService!!.mediaPlayer = MediaPlayer()
+                println("null" + "yes")
+            }
             musicService!!.mediaPlayer.reset()
+            println("ye h ->" + songsList[songPosition].filePath)
             musicService!!.mediaPlayer.setDataSource(songsList[songPosition].filePath)
             musicService!!.mediaPlayer.prepare()
+            binding.seekBar.progress = 0F
+            binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
             musicService!!.mediaPlayer.setOnCompletionListener(this@MusicActivity)
             playMusic()
+            println("play" + "yes")
         } catch (e: Exception) {
+            println(e.toString())
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun nextSong(){
+        if (songPosition == songsList.size - 1) {
+            songPosition = 0
+        } else {
+            ++songPosition
+        }
+        createMediaPlayer()
+        setMusicLayout()
+    }
+
+    fun prevSong(){
+        if (songPosition == 0) {
+            songPosition = songsList.size - 1
+        } else {
+            --songPosition
+        }
+        createMediaPlayer()
+        setMusicLayout()
+    }
+    private fun setMusicLayout(){
+        binding.singerName.text = songsList[songPosition].artist
+        binding.songName.text = songsList[songPosition].name
+        Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
+            .into(binding.songIcon)
     }
 
     override fun onDestroy() {
@@ -171,6 +212,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         isPlaying = true
         musicService!!.mediaPlayer.start()
         binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+        println("is" + musicService!!.mediaPlayer.isPlaying)
     }
 
     private fun pauseMusic() {
@@ -189,7 +231,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
     override fun onResume() {
         super.onResume()
-//        handler.postDelayed(updateSeekBarRunnable, 1000)
+        handler.postDelayed(updateSeekBarRunnable, 1000)
     }
 //    fun seekTo(position: Int) {
 //        mediaPlayer.seekTo(position)
@@ -201,7 +243,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
     override fun onPause() {
         super.onPause()
-//        handler.removeCallbacks(updateSeekBarRunnable)
+        handler.removeCallbacks(updateSeekBarRunnable)
     }
 
     private fun updateSeekBar() {
@@ -223,6 +265,8 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
     }
 
     override fun onCompletion(p0: MediaPlayer?) {
+        nextSong()
         createMediaPlayer()
+        setMusicLayout()
     }
 }
