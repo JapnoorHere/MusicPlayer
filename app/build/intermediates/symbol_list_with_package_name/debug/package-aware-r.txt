@@ -3585,6 +3585,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id next
 id nextButton
 id noScroll
 id noState
@@ -3594,6 +3595,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id nowPlaying
 id off
 id on
 id onAttachStateChangeListener
@@ -3620,6 +3622,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id prev
 id prevButton
 id progress_circular
 id progress_horizontal
@@ -3936,6 +3939,7 @@ layout exo_styled_settings_list
 layout exo_styled_settings_list_item
 layout exo_styled_sub_settings_list_item
 layout exo_track_selection_dialog
+layout fragment_now_playing_music
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -4119,6 +4123,7 @@ string exo_track_unknown
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description

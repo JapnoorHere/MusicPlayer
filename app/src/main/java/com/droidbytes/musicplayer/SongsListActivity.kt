@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBinding
 
@@ -61,5 +62,12 @@ class SongsListActivity : AppCompatActivity() {
     private fun getAlbumArtUri(albumId: Long): Uri? {
         val uri = Uri.parse("content://media/external/audio/albumart")
         return Uri.withAppendedPath(uri, albumId.toString())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (MusicActivity.musicService != null) binding.nowPlaying.visibility = View.VISIBLE
+        else
+            binding.nowPlaying.visibility = View.GONE
     }
 }

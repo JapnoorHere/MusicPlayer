@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.droidbytes.musicplayer.databinding.ActivityMusicBindingImpl;
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBindingImpl;
+import com.droidbytes.musicplayer.databinding.FragmentNowPlayingMusicBindingImpl;
 import com.droidbytes.musicplayer.databinding.SongItemBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -24,13 +25,16 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYSONGSLIST = 2;
 
-  private static final int LAYOUT_SONGITEM = 3;
+  private static final int LAYOUT_FRAGMENTNOWPLAYINGMUSIC = 3;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
+  private static final int LAYOUT_SONGITEM = 4;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_music, LAYOUT_ACTIVITYMUSIC);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_songs_list, LAYOUT_ACTIVITYSONGSLIST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.fragment_now_playing_music, LAYOUT_FRAGMENTNOWPLAYINGMUSIC);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.song_item, LAYOUT_SONGITEM);
   }
 
@@ -54,6 +58,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivitySongsListBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_songs_list is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTNOWPLAYINGMUSIC: {
+          if ("layout/fragment_now_playing_music_0".equals(tag)) {
+            return new FragmentNowPlayingMusicBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_now_playing_music is invalid. Received: " + tag);
         }
         case  LAYOUT_SONGITEM: {
           if ("layout/song_item_0".equals(tag)) {
@@ -114,11 +124,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
 
     static {
       sKeys.put("layout/activity_music_0", com.droidbytes.musicplayer.R.layout.activity_music);
       sKeys.put("layout/activity_songs_list_0", com.droidbytes.musicplayer.R.layout.activity_songs_list);
+      sKeys.put("layout/fragment_now_playing_music_0", com.droidbytes.musicplayer.R.layout.fragment_now_playing_music);
       sKeys.put("layout/song_item_0", com.droidbytes.musicplayer.R.layout.song_item);
     }
   }

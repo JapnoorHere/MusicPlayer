@@ -17,8 +17,11 @@ drawable previous
 drawable seek_bar
 id icon
 id more
+id next
 id nextButton
+id nowPlaying
 id playPauseButton
+id prev
 id prevButton
 id recyclerView
 id seekBar
@@ -28,10 +31,12 @@ id songName
 layout activity_main
 layout activity_music
 layout activity_songs_list
+layout fragment_now_playing_music
 layout song_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string hello_blank_fragment
 string hello_world
 style Base.Theme.MusicPlayer
 style Theme.MusicPlayer

@@ -15,9 +15,7 @@ public class ActivitySongsListBindingImpl extends ActivitySongsListBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.recyclerView, 1);
-        sViewsWithIds.put(R.id.icon, 2);
-        sViewsWithIds.put(R.id.songName, 3);
-        sViewsWithIds.put(R.id.singerName, 4);
+        sViewsWithIds.put(R.id.nowPlaying, 2);
     }
     // views
     @NonNull
@@ -28,14 +26,12 @@ public class ActivitySongsListBindingImpl extends ActivitySongsListBinding  {
     // Inverse Binding Event Handlers
 
     public ActivitySongsListBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
     }
     private ActivitySongsListBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[2]
+            , (androidx.fragment.app.FragmentContainerView) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[1]
-            , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);

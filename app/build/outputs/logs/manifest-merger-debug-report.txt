@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\91936db0845235b8ac69bd9d0e62de64\transformed\databinding-adapters-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\828aeae36e0785354688d042283d3d3f\transformed\databinding-ktx-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\5fce7a24fed2531c670641007305a5c1\transformed\databinding-runtime-8.0.2\AndroidManifest.xml:2:1-7:12
@@ -70,22 +70,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\sjapn\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\6970fad9f56f5ea8d66fed91960d125f\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\36f0213b1f0386ab1cd5836de9441475\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\sjapn\.gradle\caches\transforms-3\74c83f7e18dc9e7d9761d5a96702de7d\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:11-69
@@ -96,7 +96,7 @@ ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidM
 	android:name
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:6:9-64
 application
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:9:5-40:19
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:9:5-43:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -140,41 +140,41 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sjapn\.gradle\cach
 	android:dataExtractionRules
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:11:9-65
 service#com.droidbytes.musicplayer.MusicService
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:20:9-23:38
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:21:9-24:39
 	android:enabled
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:22:13-35
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:23:13-35
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:21:13-41
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:22:13-41
 activity#com.droidbytes.musicplayer.MusicActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:26:13-42
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:27:13-42
 activity#com.droidbytes.musicplayer.SongsListActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:28:9-30:40
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:30:13-37
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:29:13-46
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:31:13-46
 activity#com.droidbytes.musicplayer.MainActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:31:9-39:20
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:34:9-42:20
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:33:13-36
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:32:13-41
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:35:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:34:13-38:29
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:37:13-41:29
 action#android.intent.action.MAIN
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:35:17-69
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:35:25-66
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:37:17-77
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:37:27-74
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:40:27-74
 uses-sdk
 INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml

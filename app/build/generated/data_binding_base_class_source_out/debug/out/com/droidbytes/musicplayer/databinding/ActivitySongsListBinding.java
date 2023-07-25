@@ -4,12 +4,11 @@ package com.droidbytes.musicplayer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.droidbytes.musicplayer.R;
 import java.lang.Deprecated;
@@ -17,24 +16,16 @@ import java.lang.Object;
 
 public abstract class ActivitySongsListBinding extends ViewDataBinding {
   @NonNull
-  public final ImageView icon;
+  public final FragmentContainerView nowPlaying;
 
   @NonNull
   public final RecyclerView recyclerView;
 
-  @NonNull
-  public final TextView singerName;
-
-  @NonNull
-  public final TextView songName;
-
   protected ActivitySongsListBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView icon, RecyclerView recyclerView, TextView singerName, TextView songName) {
+      FragmentContainerView nowPlaying, RecyclerView recyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.icon = icon;
+    this.nowPlaying = nowPlaying;
     this.recyclerView = recyclerView;
-    this.singerName = singerName;
-    this.songName = songName;
   }
 
   @NonNull

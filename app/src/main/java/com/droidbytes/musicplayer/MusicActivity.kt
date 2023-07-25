@@ -94,13 +94,15 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
         binding.nextButton.setOnClickListener {
             nextSong()
+            createMediaPlayer()
+            setMusicLayout()
         }
 
         binding.prevButton.setOnClickListener {
             prevSong()
+            createMediaPlayer()
+            setMusicLayout()
         }
-
-
 
         binding.playPauseButton.setOnClickListener {
             if (isPlaying) {
@@ -162,25 +164,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         }
     }
 
-    fun nextSong(){
-        if (songPosition == songsList.size - 1) {
-            songPosition = 0
-        } else {
-            ++songPosition
-        }
-        createMediaPlayer()
-        setMusicLayout()
-    }
 
-    fun prevSong(){
-        if (songPosition == 0) {
-            songPosition = songsList.size - 1
-        } else {
-            --songPosition
-        }
-        createMediaPlayer()
-        setMusicLayout()
-    }
     private fun setMusicLayout(){
         binding.singerName.text = songsList[songPosition].artist
         binding.songName.text = songsList[songPosition].name
@@ -269,4 +253,5 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         createMediaPlayer()
         setMusicLayout()
     }
+
 }

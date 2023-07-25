@@ -3584,6 +3584,7 @@ int id navigation_header_container 0x7f0a0170
 int id never 0x7f0a0171
 int id neverCompleteToEnd 0x7f0a0172
 int id neverCompleteToStart 0x7f0a0173
+int id next 0x7f0a0242
 int id nextButton 0x7f0a0174
 int id noScroll 0x7f0a0175
 int id noState 0x7f0a0176
@@ -3593,6 +3594,7 @@ int id north 0x7f0a0179
 int id notification_background 0x7f0a017a
 int id notification_main_column 0x7f0a017b
 int id notification_main_column_container 0x7f0a017c
+int id nowPlaying 0x7f0a0243
 int id off 0x7f0a017d
 int id on 0x7f0a017e
 int id onAttachStateChangeListener 0x7f0a017f
@@ -3619,6 +3621,7 @@ int id pooling_container_listener_holder_tag 0x7f0a0193
 int id position 0x7f0a0194
 int id postLayout 0x7f0a0195
 int id pressed 0x7f0a0196
+int id prev 0x7f0a0244
 int id prevButton 0x7f0a0197
 int id progress_circular 0x7f0a0198
 int id progress_horizontal 0x7f0a0199
@@ -3935,6 +3938,7 @@ int layout exo_styled_settings_list 0x7f0d0036
 int layout exo_styled_settings_list_item 0x7f0d0037
 int layout exo_styled_sub_settings_list_item 0x7f0d0038
 int layout exo_track_selection_dialog 0x7f0d0039
+int layout fragment_now_playing_music 0x7f0d0083
 int layout ime_base_split_test_activity 0x7f0d003a
 int layout ime_secondary_split_test_activity 0x7f0d003b
 int layout m3_alert_dialog 0x7f0d003c
@@ -4118,6 +4122,7 @@ int string exo_track_unknown 0x7f110065
 int string exposed_dropdown_menu_content_description 0x7f110066
 int string fab_transformation_scrim_behavior 0x7f110067
 int string fab_transformation_sheet_behavior 0x7f110068
+int string hello_blank_fragment 0x7f1100dc
 int string hello_world 0x7f110069
 int string hide_bottom_view_on_scroll_behavior 0x7f11006a
 int string icon_content_description 0x7f11006b
