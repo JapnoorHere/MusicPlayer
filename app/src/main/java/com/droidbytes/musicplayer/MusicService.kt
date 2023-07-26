@@ -12,6 +12,7 @@ import android.os.Binder
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.widget.Toast
 import java.io.IOException
 import java.lang.Exception
 import com.droidbytes.musicplayer.MusicActivity
@@ -41,19 +42,24 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
         mediaPlayer = MediaPlayer()
     }
 
-    fun createMediaPlayer(){
-        try{
-            if(mediaPlayer == null){
-                mediaPlayer= MediaPlayer()
-                mediaPlayer.reset()
-                mediaPlayer.setDataSource(MusicActivity.songsList[MusicActivity.songPosition].filePath)
-                mediaPlayer.prepare()
+    fun createMediaPlayer() {
+        try {
+            if (mediaPlayer == null) {
+                mediaPlayer = MediaPlayer()
+                println("null" + "yes")
             }
+            mediaPlayer.reset()
+            println("ye h ->" + MusicActivity.songsList[MusicActivity.songPosition].filePath)
+            mediaPlayer.setDataSource(MusicActivity.songsList[MusicActivity.songPosition].filePath)
+            mediaPlayer.prepare()
+            MusicActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+            MusicActivity.binding.seekBar.progress = 0F
+            MusicActivity.binding.seekBar.max = MusicActivity.musicService!!.mediaPlayer.duration.toFloat()
+            println("play" + "yes")
+        } catch (e: Exception) {
+            println(e.toString())
+            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
         }
-        catch (e : Exception) {
-            return
-        }
-
     }
 
 //    fun seekBarSetup(){

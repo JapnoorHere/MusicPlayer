@@ -16,19 +16,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/DataBinderMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/DataBinderMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/databinding/ActivitySongsListBindingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/databinding/ActivitySongsListBindingImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/CircularSeekBar.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MediaPlayerViewModel.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/Songs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/Songs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_songs_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_songs_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,20 +62,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ScreenshotViewer.SavePath": "C:/Users/sjapn/Downloads",
-    "android-custom-viewD:/Projects/Github Android Projects/MusicPlayer/app/src/androidTest/java/CircularSeekBar.kt_SELECTED": "CircularSeekBar",
-    "android-custom-viewD:/Projects/Github Android Projects/MusicPlayer/app/src/main/java/com/droidbytes/musicplayer/CircularSeekBar.kt_SELECTED": "CircularSeekBar",
-    "cidr.known.project.marker": "true",
-    "last_directory_selection": "D:/Projects/Github Android Projects/MusicPlayer/app/src/androidTest/java",
-    "last_opened_file_path": "C:/Users/sjapn/Downloads/MusicPlayer-master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ScreenshotViewer.SavePath&quot;: &quot;C:/Users/sjapn/Downloads&quot;,
+    &quot;android-custom-viewD:/Projects/Github Android Projects/MusicPlayer/app/src/androidTest/java/CircularSeekBar.kt_SELECTED&quot;: &quot;CircularSeekBar&quot;,
+    &quot;android-custom-viewD:/Projects/Github Android Projects/MusicPlayer/app/src/main/java/com/droidbytes/musicplayer/CircularSeekBar.kt_SELECTED&quot;: &quot;CircularSeekBar&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/Projects/Github Android Projects/MusicPlayer/app/src/androidTest/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sjapn/Downloads/MusicPlayer-master&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Github Android Projects\MusicPlayer\app\src\main\res\drawable" />

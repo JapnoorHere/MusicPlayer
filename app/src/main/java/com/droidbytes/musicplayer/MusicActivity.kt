@@ -80,16 +80,16 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         setContentView(binding.root)
         songsList = ArrayList()
 
+        songPosition = intent.getIntExtra("songPosition",0)
         songsList = intent.getSerializableExtra("songsList") as ArrayList<Songs>
-        val pos = intent.getStringExtra("songPosition").toString()
-        songPosition = Integer.parseInt(pos)
-
-//        musicDurationText = binding.time
-
         setMusicLayout()
 
-        println("ethe" + songsList)
-
+        if(intent.getStringExtra("class").equals("NowPlaying")){
+            binding.seekBar.progress = musicService!!.mediaPlayer.currentPosition.toFloat()
+            binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
+            if(isPlaying) binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+            else binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
+        }
 //        updatePlayPauseButton()
 
         binding.nextButton.setOnClickListener {
@@ -133,31 +133,19 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         })
     }
 
-    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        println("service yes")
-
-    }
-
-    override fun onServiceDisconnected(name: ComponentName?) {
-        musicService = null
-    }
-
 
     private fun createMediaPlayer() {
         try {
             if (musicService!!.mediaPlayer == null) {
                 musicService!!.mediaPlayer = MediaPlayer()
-                println("null" + "yes")
             }
             musicService!!.mediaPlayer.reset()
-            println("ye h ->" + songsList[songPosition].filePath)
             musicService!!.mediaPlayer.setDataSource(songsList[songPosition].filePath)
             musicService!!.mediaPlayer.prepare()
             binding.seekBar.progress = 0F
             binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
             musicService!!.mediaPlayer.setOnCompletionListener(this@MusicActivity)
             playMusic()
-            println("play" + "yes")
         } catch (e: Exception) {
             println(e.toString())
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
@@ -252,6 +240,14 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         nextSong()
         createMediaPlayer()
         setMusicLayout()
+    }
+
+    override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onServiceDisconnected(p0: ComponentName?) {
+        TODO("Not yet implemented")
     }
 
 }

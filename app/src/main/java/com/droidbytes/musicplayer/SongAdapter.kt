@@ -65,7 +65,7 @@ class SongAdapter(
 
             val intent = Intent(songsListActivity, MusicActivity::class.java)
             intent.putExtra("songsList", songsList)
-            intent.putExtra("songPosition", position.toString())
+            intent.putExtra("songPosition", position)
             songsListActivity.startActivity(intent)
         }
     }
