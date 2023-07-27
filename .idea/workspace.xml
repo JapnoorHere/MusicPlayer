@@ -18,14 +18,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/CircularSeekBar.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MediaPlayerViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/Songs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/Songs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +86,9 @@
       <recent name="com.droidbytes.musicplayer" />
     </key>
     <key name="android.template.-879975683">
+      <recent name="com.droidbytes.musicplayer" />
+    </key>
+    <key name="android.template.-1015010774">
       <recent name="com.droidbytes.musicplayer" />
     </key>
   </component>

@@ -28,6 +28,7 @@ id seekBar
 id singerName
 id songIcon
 id songName
+layout activity_external_audio_file
 layout activity_main
 layout activity_music
 layout activity_songs_list

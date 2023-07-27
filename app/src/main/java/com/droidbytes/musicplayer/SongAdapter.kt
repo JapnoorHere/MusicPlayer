@@ -66,6 +66,12 @@ class SongAdapter(
             val intent = Intent(songsListActivity, MusicActivity::class.java)
             intent.putExtra("songsList", songsList)
             intent.putExtra("songPosition", position)
+            if(MusicActivity.nowPlayingSongId == songsList[position].id){
+                intent.putExtra("songPosition",MusicActivity.songPosition)
+            }
+            else{
+                intent.putExtra("songPosition", position)
+            }
             songsListActivity.startActivity(intent)
         }
     }

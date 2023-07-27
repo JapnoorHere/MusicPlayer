@@ -58,7 +58,6 @@ class NowPlayingMusic : Fragment() {
             intent.putExtra("class","NowPlaying")
             intent.putExtra("songPosition",MusicActivity.songPosition)
             intent.putExtra("songsList", MusicActivity.songsList)
-
             ContextCompat.startActivity(requireContext(),intent,null)
         }
 

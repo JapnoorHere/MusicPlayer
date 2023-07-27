@@ -41,13 +41,13 @@ class SongsListActivity : AppCompatActivity() {
             val artistIndex = it.getColumnIndexOrThrow(Media.ARTIST)
 
             while (it.moveToNext()){
-                val id = it.getLong(idIndex)
+                val id = it.getString(idIndex)
                 val title = it.getString(titleIndex)
                 val filePath = it.getString(dataIndex)
                 val artist = it.getString(artistIndex)
                 val albumId = it.getLong(albumIdIndex)
                 val albumArtUri = getAlbumArtUri(albumId)
-                val song = Songs(title, filePath,albumArtUri.toString(),artist)
+                val song = Songs(id,title, filePath,albumArtUri.toString(),artist)
                 songsList.add(song)
                 println("Song $songsList")
             }

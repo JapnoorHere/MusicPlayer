@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\91936db0845235b8ac69bd9d0e62de64\transformed\databinding-adapters-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\828aeae36e0785354688d042283d3d3f\transformed\databinding-ktx-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\5fce7a24fed2531c670641007305a5c1\transformed\databinding-runtime-8.0.2\AndroidManifest.xml:2:1-7:12
@@ -39,9 +39,9 @@ MERGED from [com.google.android.exoplayer:exoplayer-ui:2.19.0] C:\Users\sjapn\.g
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] C:\Users\sjapn\.gradle\caches\transforms-3\b6f064711dd4b652d3b5e27c3f020feb\transformed\recyclerview-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches\transforms-3\1bc17fb4cc3a6d6edf75020afeff8a91\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
-MERGED from [androidx.core:core-ktx:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\928e04a9e41da2e86dfa9d0f6f432686\transformed\core-ktx-1.12.0-alpha05\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:2:1-7:12
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\af1dea311f0cbdfeff6f479af1c9d278\transformed\viewbinding-8.0.2\AndroidManifest.xml:2:1-7:12
@@ -70,22 +70,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\sjapn\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\6970fad9f56f5ea8d66fed91960d125f\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\36f0213b1f0386ab1cd5836de9441475\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\sjapn\.gradle\caches\transforms-3\74c83f7e18dc9e7d9761d5a96702de7d\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:2:11-69
@@ -96,7 +96,7 @@ ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidM
 	android:name
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:6:9-64
 application
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:9:5-43:19
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:9:5-55:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -105,8 +105,8 @@ MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\cach
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\caches\transforms-3\428b2eb71e834e554e54a85e6030ddee\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\sjapn\.gradle\caches\transforms-3\2bb51d096b5686d32235914e21722b9b\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\sjapn\.gradle\caches\transforms-3\2bb51d096b5686d32235914e21722b9b\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:5-89
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:9:5-20
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -120,7 +120,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sjapn\.gradle\cach
 	android:requestLegacyExternalStorage
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:15:9-52
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:18-86
 	android:supportsRtl
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
@@ -139,42 +139,66 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sjapn\.gradle\cach
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:18:9-49
 	android:dataExtractionRules
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:11:9-65
+activity#com.droidbytes.musicplayer.ExternalAudioFileActivity
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:20:9-33:20
+	android:exported
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:21:13-54
+intent-filter#action:name:android.intent.action.MUSIC_PLAYER+action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:audio/*
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:26:13-31:29
+action#android.intent.action.VIEW
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:27:25-66
+action#android.intent.action.MUSIC_PLAYER
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:28:25-74
+category#android.intent.category.DEFAULT
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:29:27-73
+data
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:30:17-51
+	android:mimeType
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:30:23-49
 service#com.droidbytes.musicplayer.MusicService
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:21:9-24:39
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:35:9-38:39
 	android:enabled
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:23:13-35
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:37:13-35
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:24:13-36
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:38:13-36
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:22:13-41
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:36:13-41
 activity#com.droidbytes.musicplayer.MusicActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:26:9-28:40
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:40:9-42:40
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:28:13-37
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:27:13-42
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:41:13-42
 activity#com.droidbytes.musicplayer.SongsListActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:30:9-32:40
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:43:9-45:40
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:32:13-37
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:31:13-46
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:44:13-46
 activity#com.droidbytes.musicplayer.MainActivity
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:34:9-42:20
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:46:9-54:20
 	android:exported
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:36:13-36
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:35:13-41
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:47:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:37:13-41:29
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:38:17-69
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:38:25-66
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:40:17-77
+ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:40:27-74
+		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:52:27-74
 uses-sdk
 INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml
@@ -249,12 +273,12 @@ MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches\transforms-3\1bc17fb4cc3a6d6edf75020afeff8a91\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
-MERGED from [androidx.core:core-ktx:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\928e04a9e41da2e86dfa9d0f6f432686\transformed\core-ktx-1.12.0-alpha05\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\928e04a9e41da2e86dfa9d0f6f432686\transformed\core-ktx-1.12.0-alpha05\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:5:5-44
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:5:5-7:41
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -348,25 +372,25 @@ MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.0] C:\Users\sjap
 	android:name
 		ADDED from [com.google.android.exoplayer:exoplayer-core:2.19.0] C:\Users\sjapn\.gradle\caches\transforms-3\a7e46e29c1bf324587f3a96f3e829483\transformed\exoplayer-core-2.19.0\AndroidManifest.xml:24:22-76
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:23:9-81
 permission#com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:23:9-81
 uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:22-94
 uses-permission#com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.12.0-alpha05] C:\Users\sjapn\.gradle\caches\transforms-3\4ed37b977d5d433b8bd7d69bdb71cf3a\transformed\core-1.12.0-alpha05\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:22-94
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\sjapn\.gradle\caches\transforms-3\e1ca8779aa28a96e2446590bf4670520\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 	android:value

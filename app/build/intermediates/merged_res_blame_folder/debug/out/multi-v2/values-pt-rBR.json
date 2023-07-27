@@ -4,7 +4,7 @@
             "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-37:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\4ed37b977d5d433b8bd7d69bdb71cf3a\\transformed\\core-1.12.0-alpha05\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\dcf59f4e5b748679afdaae61fff45bff\\transformed\\core-1.12.0-beta01\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

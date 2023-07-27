@@ -1,37 +1,17 @@
 package com.droidbytes.musicplayer
 
-import android.annotation.SuppressLint
 import android.content.ComponentName
-import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import android.content.pm.PackageManager
 import android.media.AudioManager
 import android.media.MediaPlayer
-import android.media.audiofx.LoudnessEnhancer
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
-import android.os.Looper
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.MediaController
-import android.widget.SeekBar
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
-import com.google.android.exoplayer2.MediaItem
-import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.SimpleExoPlayer
-import java.io.IOException
 
 class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
 
@@ -43,6 +23,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         private var handler = Handler()
         var isPlaying = false
         var songPosition: Int = 0
+        var nowPlayingSongId : String = ""
     }
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -80,15 +61,19 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         setContentView(binding.root)
         songsList = ArrayList()
 
-        songPosition = intent.getIntExtra("songPosition",0)
+        songPosition = intent.getIntExtra("songPosition", 0)
         songsList = intent.getSerializableExtra("songsList") as ArrayList<Songs>
         setMusicLayout()
 
-        if(intent.getStringExtra("class").equals("NowPlaying")){
+        if (intent.getStringExtra("class").equals("NowPlaying")) {
             binding.seekBar.progress = musicService!!.mediaPlayer.currentPosition.toFloat()
             binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
-            if(isPlaying) binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+            println(binding.seekBar.progress.toInt())
+            if (isPlaying) binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
             else binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
+        }
+        else{
+            bindService()
         }
 //        updatePlayPauseButton()
 
@@ -119,7 +104,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
                 progress: Float,
                 fromUser: Boolean,
             ) {
-                if(fromUser){
+                if (fromUser) {
                     musicService!!.mediaPlayer.seekTo(progress.toInt())
                 }
             }
@@ -146,6 +131,7 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
             binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
             musicService!!.mediaPlayer.setOnCompletionListener(this@MusicActivity)
             playMusic()
+            nowPlayingSongId = songsList[songPosition].id
         } catch (e: Exception) {
             println(e.toString())
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
@@ -153,7 +139,8 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
     }
 
 
-    private fun setMusicLayout(){
+    private fun setMusicLayout() {
+        binding.songName.isSelected = true
         binding.singerName.text = songsList[songPosition].artist
         binding.songName.text = songsList[songPosition].name
         Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
@@ -162,29 +149,27 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
     override fun onDestroy() {
         super.onDestroy()
+        if(songsList[songPosition].id == "Unknown" && !isPlaying) exitApplication()
+    }
+
+    fun bindService(){
+        musicBound = true
+        val musicIntent = Intent(this, MusicService::class.java)
+        bindService(musicIntent, musicConnection, BIND_AUTO_CREATE)
+        startService(intent)
     }
 
     override fun onStart() {
         super.onStart()
-        musicBound = true
-        val musicIntent = Intent(this, MusicService::class.java)
-        bindService(musicIntent, musicConnection, Context.BIND_AUTO_CREATE)
-        startService(intent)
-    }
+        if (musicService == null) {
 
-//    override fun onStop() {
-//        super.onStop()
-//        if (musicBound) {
-//            unbindService(musicConnection)
-//            musicBound = false
-//        }
-//    }
+        }
+    }
 
     private fun playMusic() {
         isPlaying = true
         musicService!!.mediaPlayer.start()
         binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
-        println("is" + musicService!!.mediaPlayer.isPlaying)
     }
 
     private fun pauseMusic() {

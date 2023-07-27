@@ -33,6 +33,21 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MusicPlayer" >
+        <activity
+            android:name="com.droidbytes.musicplayer.ExternalAudioFileActivity"
+            android:exported="true" >
+
+            <!-- Add the intent filter for audio files -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MUSIC_PLAYER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name="com.droidbytes.musicplayer.MusicService"
             android:enabled="true"
