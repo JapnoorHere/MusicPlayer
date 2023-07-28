@@ -17,19 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicPlayer"
         tools:targetApi="31">
+        <service
+            android:name=".ExternalMusicService"
+            android:enabled="true"
+            android:exported="true"/>
+
         <activity
             android:name=".ExternalAudioFileActivity"
-            android:exported="true"
-            >
+            android:exported="true">
 
             <!-- Add the intent filter for audio files -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="audio/*"/>
-            </intent-filter>
 
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="audio/*" />
+            </intent-filter>
         </activity>
 
         <service

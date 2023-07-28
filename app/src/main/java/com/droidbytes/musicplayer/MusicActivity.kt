@@ -13,7 +13,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
 
-class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
+class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 
     companion object {
         var musicBound = false
@@ -140,9 +140,9 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
 
 
     private fun setMusicLayout() {
-        binding.songName.isSelected = true
         binding.singerName.text = songsList[songPosition].artist
         binding.songName.text = songsList[songPosition].name
+        println(songsList[songPosition].albumArtUri)
         Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
             .into(binding.songIcon)
     }
@@ -227,12 +227,5 @@ class MusicActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnComp
         setMusicLayout()
     }
 
-    override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onServiceDisconnected(p0: ComponentName?) {
-        TODO("Not yet implemented")
-    }
 
 }

@@ -33,6 +33,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MusicPlayer" >
+        <service
+            android:name="com.droidbytes.musicplayer.ExternalMusicService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name="com.droidbytes.musicplayer.ExternalAudioFileActivity"
             android:exported="true" >
