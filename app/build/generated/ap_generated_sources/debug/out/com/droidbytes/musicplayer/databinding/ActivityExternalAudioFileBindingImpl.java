@@ -16,7 +16,7 @@ public class ActivityExternalAudioFileBindingImpl extends ActivityExternalAudioF
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.songName, 1);
         sViewsWithIds.put(R.id.singerName, 2);
-        sViewsWithIds.put(R.id.songIcon, 3);
+        sViewsWithIds.put(R.id.songIconn, 3);
         sViewsWithIds.put(R.id.seekBar, 4);
         sViewsWithIds.put(R.id.playPauseButton, 5);
     }

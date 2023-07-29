@@ -3,15 +3,25 @@ package com.droidbytes.musicplayer
 import android.content.ComponentName
 import android.content.Intent
 import android.content.ServiceConnection
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
+import androidx.palette.graphics.Palette
+
 
 class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 
@@ -54,6 +64,8 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             musicService = null
         }
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,7 +129,12 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             }
         })
     }
-
+    private fun getBitmapFromUri(uri: Uri): Bitmap {
+        // Load the image from the URI and create a Bitmap
+        return contentResolver.openInputStream(uri)?.use { inputStream ->
+            BitmapFactory.decodeStream(inputStream)
+        } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
+    }
 
     private fun createMediaPlayer() {
         try {
@@ -140,6 +157,19 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 
 
     private fun setMusicLayout() {
+        val bitmap = getBitmapFromUri(songsList[songPosition].albumArtUri!!.toUri())
+        Palette.from(bitmap).generate { palette ->
+            val vibrantColor = palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
+            val gradientDrawable = GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                intArrayOf(vibrantColor!!, Color.WHITE)
+            )
+            gradientDrawable.cornerRadius = 0f
+            binding.root.background = gradientDrawable
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = vibrantColor
+            }
+        }
         binding.singerName.text = songsList[songPosition].artist
         binding.songName.text = songsList[songPosition].name
         println(songsList[songPosition].albumArtUri)

@@ -18,7 +18,6 @@ class ExternalMusicService : Service(), AudioManager.OnAudioFocusChangeListener 
     lateinit var audioManager: AudioManager
     private lateinit var runnable: Runnable
 
-
     inner class ExternalMusicBinder : Binder() {
         fun getService(): ExternalMusicService {
             return this@ExternalMusicService

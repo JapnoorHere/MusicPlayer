@@ -23,7 +23,7 @@ class SongsListActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)
         binding.recyclerView.adapter=songAdapter
 
-        val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+            val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
         val projection = arrayOf(
             Media._ID,

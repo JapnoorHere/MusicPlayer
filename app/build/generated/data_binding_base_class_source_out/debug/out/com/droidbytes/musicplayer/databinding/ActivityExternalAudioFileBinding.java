@@ -26,19 +26,19 @@ public abstract class ActivityExternalAudioFileBinding extends ViewDataBinding {
   public final TextView singerName;
 
   @NonNull
-  public final ImageView songIcon;
+  public final ImageView songIconn;
 
   @NonNull
   public final TextView songName;
 
   protected ActivityExternalAudioFileBinding(Object _bindingComponent, View _root,
       int _localFieldCount, ImageView playPauseButton, CircularSeekBar seekBar, TextView singerName,
-      ImageView songIcon, TextView songName) {
+      ImageView songIconn, TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.playPauseButton = playPauseButton;
     this.seekBar = seekBar;
     this.singerName = singerName;
-    this.songIcon = songIcon;
+    this.songIconn = songIconn;
     this.songName = songName;
   }
 

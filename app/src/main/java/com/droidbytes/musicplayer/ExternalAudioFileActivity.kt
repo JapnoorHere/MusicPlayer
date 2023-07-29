@@ -4,16 +4,24 @@ import android.content.ComponentName
 import android.content.Intent
 import android.content.ServiceConnection
 import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import androidx.palette.graphics.Palette
 import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityExternalAudioFileBinding
 
@@ -50,7 +58,6 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
             binding.seekBar.progress = currentPosition.toFloat()
         }
     }
-
 
     private val musicConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -90,6 +97,9 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         } else {
             bindService()
             getSongDetails()
+            Glide.with(this@ExternalAudioFileActivity)
+                .load(songIcon)
+                .into(binding.songIconn)
             setMusicLayout()
             binding.playPauseButton.setOnClickListener {
                 if (isPlaying) {
@@ -128,12 +138,31 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
             }
         }
     }
+    private fun getBitmapFromUri(uri: Uri?): Bitmap {
+        return contentResolver.openInputStream(uri!!)?.use { inputStream ->
+            BitmapFactory.decodeStream(inputStream)
+        } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
+    }
 
     private fun setMusicLayout() {
-        Glide.with(this).load(songIcon.toString()).into(binding.songIcon)
+        val bitmap = getBitmapFromUri(songIcon)
+        Palette.from(bitmap).generate { palette ->
+            val vibrantColor = palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
+            val gradientDrawable = GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                intArrayOf(vibrantColor!!, Color.WHITE)
+            )
+            gradientDrawable.cornerRadius = 0f
+            binding.root.background = gradientDrawable
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = vibrantColor
+            }
+        }
+        Glide.with(this@ExternalAudioFileActivity)
+            .load(songIcon)
+            .into(binding.songIconn)
         binding.singerName.text = singerName
         binding.songName.text = songName
-        println("icon " + songIcon)
     }
 
     private fun getSongDetails() {
@@ -141,20 +170,26 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         try {
             val projection = arrayOf(MediaStore.Audio.Media.DATA, MediaStore.Audio.Media.DURATION,
             MediaStore.Audio.Media.TITLE,MediaStore.Audio.Media.ARTIST,MediaStore.Audio.Media.ALBUM_ID)
+            val selection = "${MediaStore.Audio.Media.DATA} = ?"
+            val selectionArgs = arrayOf(songIcon)
             cursor =
-                this.contentResolver.query(songUri.toString().toUri(), projection, null, null, null)
+                this.contentResolver.query(
+                    MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                    projection, selection, arrayOf(songIcon.toString()),null)
             println(songUri.toString().toUri())
             val dataColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
             val durationColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
             val songColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
             val singerColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)
-            val albumId = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID)
-            cursor!!.moveToFirst()
-            audioFilePath = dataColumn?.let { cursor.getString(it) }.toString()
-            songDuration = durationColumn?.let { cursor.getLong(it) }!!
-            songName = songColumn?.let { cursor.getString(it) }!!
-            singerName = singerColumn?.let { cursor.getString(it) }!!
-            songIcon = getAlbumArtUri(albumId!!.toLong())
+            val albumIdIndex = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID)
+            if(cursor!!.moveToFirst()) {
+                audioFilePath = dataColumn?.let { cursor.getString(it) }.toString()
+                songDuration = durationColumn?.let { cursor.getLong(it) }!!
+                songName = songColumn?.let { cursor.getString(it) }!!
+                singerName = singerColumn?.let { cursor.getString(it) }!!
+                songIcon = getAlbumArtUri(albumIdIndex!!.toLong())
+                println("songIcon" + songIcon)
+            }
         } finally {
             cursor?.close()
         }

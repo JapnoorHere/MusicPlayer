@@ -16,6 +16,7 @@ MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\cach
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\525f80575310a68682c55efd3e499db4\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\sjapn\.gradle\caches\transforms-3\af5a04464f2571bed0b815cfb5927500\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\3293de72e739cb84608894ccccc31cc6\transformed\activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.palette:palette:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\d2a0bedbaa8c40909c9f3ad180183e85\transformed\palette-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\2d61ed5ddc7fa8af0b5e8e8d071002d8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\0c7c114351f25246e9f350caa62e45cb\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\11e6be29f4f912acbd88b56806e1e7f4\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -235,6 +236,8 @@ MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\sjapn\.gradle\caches\tra
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\sjapn\.gradle\caches\transforms-3\af5a04464f2571bed0b815cfb5927500\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\3293de72e739cb84608894ccccc31cc6\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\3293de72e739cb84608894ccccc31cc6\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\d2a0bedbaa8c40909c9f3ad180183e85\transformed\palette-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\d2a0bedbaa8c40909c9f3ad180183e85\transformed\palette-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\2d61ed5ddc7fa8af0b5e8e8d071002d8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\2d61ed5ddc7fa8af0b5e8e8d071002d8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\0c7c114351f25246e9f350caa62e45cb\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44

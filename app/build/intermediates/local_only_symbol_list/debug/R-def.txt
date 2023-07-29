@@ -27,6 +27,7 @@ id recyclerView
 id seekBar
 id singerName
 id songIcon
+id songIconn
 id songName
 layout activity_external_audio_file
 layout activity_main

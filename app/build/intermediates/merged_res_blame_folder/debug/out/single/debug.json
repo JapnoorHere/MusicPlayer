@@ -76,6 +76,10 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.droidbytes.musicplayer.app-merged_res-39:/layout_activity_music.xml.flat",
+        "source": "com.droidbytes.musicplayer.app-main-41:/layout/activity_music.xml"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\layout_activity_music.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\layout\\activity_music.xml"
     },
@@ -110,10 +114,6 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.droidbytes.musicplayer.app-merged_res-39:/layout_activity_external_audio_file.xml.flat",
-        "source": "com.droidbytes.musicplayer.app-main-41:/layout/activity_external_audio_file.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
