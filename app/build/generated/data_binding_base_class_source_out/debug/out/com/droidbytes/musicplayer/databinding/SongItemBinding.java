@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.airbnb.lottie.LottieAnimationView;
 import com.droidbytes.musicplayer.R;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -17,6 +18,9 @@ import java.lang.Object;
 public abstract class SongItemBinding extends ViewDataBinding {
   @NonNull
   public final ImageView icon;
+
+  @NonNull
+  public final LottieAnimationView lottieView;
 
   @NonNull
   public final ImageView more;
@@ -28,9 +32,11 @@ public abstract class SongItemBinding extends ViewDataBinding {
   public final TextView songName;
 
   protected SongItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView icon, ImageView more, TextView singerName, TextView songName) {
+      ImageView icon, LottieAnimationView lottieView, ImageView more, TextView singerName,
+      TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.icon = icon;
+    this.lottieView = lottieView;
     this.more = more;
     this.singerName = singerName;
     this.songName = songName;

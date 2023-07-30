@@ -35,6 +35,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         var isPlaying = false
         var songPosition: Int = 0
         var nowPlayingSongId: String = ""
+        var vibrantColor : Int = 0
     }
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -173,13 +174,13 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
     }
 
 
-    private fun setMusicLayout() {
+        fun setMusicLayout() {
         val bitmap = getBitmapFromUri(songsList!![songPosition].albumArtUri!!.toUri())
         if(bitmap!=null) {
             Palette.from(bitmap).generate { palette ->
-                val vibrantColor =
-                    palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
-                val lightVibrantColor = vibrantColor?.let {
+                vibrantColor =
+                    palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))!!
+                val lightVibrantColor = vibrantColor.let {
                     Color.argb(
                         50,
                         Color.red(it),
@@ -189,7 +190,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
                 }
                 val gradientDrawable = GradientDrawable(
                     GradientDrawable.Orientation.TOP_BOTTOM,
-                    intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
+                    intArrayOf(vibrantColor, lightVibrantColor.toInt())
                 )
                 gradientDrawable.cornerRadius = 0f
                 binding.root.background = gradientDrawable

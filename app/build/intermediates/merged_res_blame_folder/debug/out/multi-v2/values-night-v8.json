@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-37:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-38:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\5d34117a1d7c9e4df06238fbf88b8946\\transformed\\material-1.9.0\\res\\values-night-v8\\values-night-v8.xml",

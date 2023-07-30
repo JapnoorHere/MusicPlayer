@@ -82,19 +82,24 @@ class NowPlayingMusic : Fragment() {
     }
 
     private fun playMusic() {
+        songsListActivity.setAdapter()
         MusicActivity.isPlaying = true
         MusicActivity.musicService!!.mediaPlayer.start()
         binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+        songsListActivity.setAdapter()
     }
 
     private fun pauseMusic() {
+        songsListActivity.setAdapter()
         MusicActivity.isPlaying = false
         MusicActivity.musicService!!.mediaPlayer.pause()
         binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
+
     }
 
     override fun onResume() {
         super.onResume()
+        songsListActivity.setAdapter()
         if (MusicActivity.musicService != null) {
             binding.root.visibility = View.VISIBLE
             setLayout()

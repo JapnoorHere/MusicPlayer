@@ -17,7 +17,8 @@ public class SongItemBindingImpl extends SongItemBinding  {
         sViewsWithIds.put(R.id.icon, 1);
         sViewsWithIds.put(R.id.songName, 2);
         sViewsWithIds.put(R.id.singerName, 3);
-        sViewsWithIds.put(R.id.more, 4);
+        sViewsWithIds.put(R.id.lottieView, 4);
+        sViewsWithIds.put(R.id.more, 5);
     }
     // views
     @NonNull
@@ -28,12 +29,13 @@ public class SongItemBindingImpl extends SongItemBinding  {
     // Inverse Binding Event Handlers
 
     public SongItemBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private SongItemBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.ImageView) bindings[4]
+            , (com.airbnb.lottie.LottieAnimationView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[2]
             );

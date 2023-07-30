@@ -18,6 +18,7 @@ drawable seek_bar
 id cardView
 id icon
 id llNowPlaying
+id lottieView
 id more
 id next
 id nextButton

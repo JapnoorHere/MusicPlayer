@@ -36,12 +36,18 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="Name"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_marginStart="15dp"
             android:id="@+id/songName"
             />
 
         <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="13sp"
@@ -50,7 +56,16 @@
             android:id="@+id/singerName"
             />
     </LinearLayout>
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:id="@+id/lottieView"
+        app:lottie_loop="true"
+        android:visibility="invisible"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="music_bars.json" />
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-37:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
+            "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-38:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\5d34117a1d7c9e4df06238fbf88b8946\\transformed\\material-1.9.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",

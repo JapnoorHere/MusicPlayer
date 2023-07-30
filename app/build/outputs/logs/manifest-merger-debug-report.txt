@@ -10,6 +10,7 @@ MERGED from [androidx.databinding:databinding-runtime:8.0.2] C:\Users\sjapn\.gra
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\aaa02eeb135e63f2a8511ef1b5c9fe0b\transformed\lifecycle-runtime-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.airbnb.android:lottie:3.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\ab0cdf01bebbf8365c7fbb8c9081e29d\transformed\lottie-3.4.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\sjapn\.gradle\caches\transforms-3\67cc96fd8bdb585fe6c4eade01f10241\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\sjapn\.gradle\caches\transforms-3\6f26defcd9545a930a929752398275fc\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\caches\transforms-3\428b2eb71e834e554e54a85e6030ddee\transformed\glide-4.15.1\AndroidManifest.xml:2:1-11:12
@@ -102,6 +103,8 @@ MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\ab0cdf01bebbf8365c7fbb8c9081e29d\transformed\lottie-3.4.0\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\ab0cdf01bebbf8365c7fbb8c9081e29d\transformed\lottie-3.4.0\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\caches\transforms-3\428b2eb71e834e554e54a85e6030ddee\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\caches\transforms-3\428b2eb71e834e554e54a85e6030ddee\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\sjapn\.gradle\caches\transforms-3\2bb51d096b5686d32235914e21722b9b\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
@@ -224,6 +227,8 @@ MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d34117a1d7c9e4df06238fbf88b8946\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\sjapn\.gradle\caches\transforms-3\59c6f5a8230e3a6f5fc3173029378521\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\ab0cdf01bebbf8365c7fbb8c9081e29d\transformed\lottie-3.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.4.0] C:\Users\sjapn\.gradle\caches\transforms-3\ab0cdf01bebbf8365c7fbb8c9081e29d\transformed\lottie-3.4.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\sjapn\.gradle\caches\transforms-3\67cc96fd8bdb585fe6c4eade01f10241\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\sjapn\.gradle\caches\transforms-3\67cc96fd8bdb585fe6c4eade01f10241\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\sjapn\.gradle\caches\transforms-3\6f26defcd9545a930a929752398275fc\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44

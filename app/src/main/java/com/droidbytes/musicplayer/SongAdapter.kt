@@ -4,9 +4,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.IBinder
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
@@ -20,6 +22,7 @@ class SongAdapter(
     private var songsList: ArrayList<Songs>,
 ) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {
 
+    var holderGlobal : ViewHolder? = null
 
     class ViewHolder(var binding: SongItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -36,40 +39,27 @@ class SongAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.songName.text = songsList[position].name
         holder.binding.singerName.text = songsList[position].artist
+        holderGlobal = holder
+
+        if (MusicActivity.songPosition.toString() == position.toString() && MusicActivity.isPlaying) {
+            println(MusicActivity.songPosition.toString() + " " + position.toString())
+            holder.binding.lottieView.visibility = View.VISIBLE
+            holder.itemView.background = ColorDrawable(MusicActivity.vibrantColor)
+        } else {
+            holder.binding.lottieView.visibility = View.INVISIBLE
+        }
 
         Glide.with(songsListActivity)
             .load(songsList[position].albumArtUri)
             .into(holder.binding.icon)
-
+        println(MusicActivity.nowPlayingSongId == songsList[position].id)
         holder.itemView.setOnClickListener {
-//            val stopIntent = Intent(MusicService.ACTION_STOP)
-//            songsListActivity.sendBroadcast(stopIntent)
-
-//            val intent1 = Intent(songsListActivity, MusicService::class.java)
-//            lateinit var musicService : MusicService
-//            val musicConnection = object : ServiceConnection {
-//                override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-//                    val binder = service as MusicService.MusicBinder
-//                    musicService = binder.getService()
-//                    if (musicService.isMusicPlaying()) {
-//                        musicService.stopMusic()
-//                    }
-//                }
-//
-//                override fun onServiceDisconnected(p0: ComponentName?) {
-//                    TODO("Not yet implemented")
-//                }
-//
-//            }
-//            songsListActivity.bindService(intent1, musicConnection, Context.BIND_AUTO_CREATE)
-
             val intent = Intent(songsListActivity, MusicActivity::class.java)
             intent.putExtra("songsList", songsList)
             intent.putExtra("songPosition", position)
-            if(MusicActivity.nowPlayingSongId == songsList[position].id){
-                intent.putExtra("songPosition",MusicActivity.songPosition)
-            }
-            else{
+            if (MusicActivity.nowPlayingSongId == songsList[position].id) {
+                intent.putExtra("songPosition", MusicActivity.songPosition)
+            } else {
                 intent.putExtra("songPosition", position)
             }
             songsListActivity.startActivity(intent)
@@ -79,7 +69,6 @@ class SongAdapter(
     override fun getItemCount(): Int {
         return songsList.size
     }
-
 
 }
 

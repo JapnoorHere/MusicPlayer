@@ -13,16 +13,16 @@ class SongsListActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySongsListBinding
     private lateinit var songAdapter: SongAdapter
-    private lateinit var songsList : ArrayList<Songs>
+    private lateinit var songsList: ArrayList<Songs>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivitySongsListBinding.inflate(layoutInflater)
+        binding = ActivitySongsListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        songsList=ArrayList()
-        songAdapter=SongAdapter(this@SongsListActivity,songsList)
-        binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)
-        binding.recyclerView.adapter=songAdapter
+        songsList = ArrayList()
+        songAdapter = SongAdapter(this@SongsListActivity, songsList)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this@SongsListActivity)
+        binding.recyclerView.adapter = songAdapter
 
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
@@ -33,7 +33,7 @@ class SongsListActivity : AppCompatActivity() {
             Media.ALBUM_ID,
             Media.ARTIST
         )
-        val cursor = contentResolver.query(uri,projection,selection,null,null)
+        val cursor = contentResolver.query(uri, projection, selection, null, null)
         cursor?.use {
             val idIndex = it.getColumnIndexOrThrow(Media._ID)
             val titleIndex = it.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
@@ -41,14 +41,14 @@ class SongsListActivity : AppCompatActivity() {
             val albumIdIndex = it.getColumnIndexOrThrow(Media.ALBUM_ID)
             val artistIndex = it.getColumnIndexOrThrow(Media.ARTIST)
 
-            while (it.moveToNext()){
+            while (it.moveToNext()) {
                 val id = it.getString(idIndex)
                 val title = it.getString(titleIndex)
                 val filePath = it.getString(dataIndex)
                 val artist = it.getString(artistIndex)
                 val albumId = it.getLong(albumIdIndex)
                 val albumArtUri = getAlbumArtUri(albumId)
-                val song = Songs(id,title, filePath,albumArtUri.toString(),artist)
+                val song = Songs(id, title, filePath, albumArtUri.toString(), artist)
                 songsList.add(song)
                 println("Song $songsList")
             }
@@ -56,11 +56,12 @@ class SongsListActivity : AppCompatActivity() {
         songsList.sortBy {
             it.name
         }
-        songAdapter=SongAdapter(this@SongsListActivity,songsList)
+        songAdapter = SongAdapter(this@SongsListActivity, songsList)
         songAdapter.notifyDataSetChanged()
-        binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)
-        binding.recyclerView.adapter=songAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this@SongsListActivity)
+        binding.recyclerView.adapter = songAdapter
     }
+
     private fun getAlbumArtUri(albumId: Long): Uri? {
         val uri = Uri.parse("content://media/external/audio/albumart")
         return Uri.withAppendedPath(uri, albumId.toString())
@@ -72,5 +73,17 @@ class SongsListActivity : AppCompatActivity() {
             binding.nowPlaying.visibility = View.VISIBLE
         else
             binding.nowPlaying.visibility = View.GONE
+
+        setAdapter()
     }
+
+    fun setAdapter() {
+        if (songAdapter.holderGlobal != null) {
+            songAdapter = SongAdapter(this@SongsListActivity, songsList)
+            songAdapter.notifyDataSetChanged()
+            binding.recyclerView.layoutManager = LinearLayoutManager(this@SongsListActivity)
+            binding.recyclerView.adapter = songAdapter
+        }
+    }
+
 }
