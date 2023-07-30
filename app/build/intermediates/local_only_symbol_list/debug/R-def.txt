@@ -15,7 +15,9 @@ drawable pause
 drawable play
 drawable previous
 drawable seek_bar
+id cardView
 id icon
+id llNowPlaying
 id more
 id next
 id nextButton
@@ -27,7 +29,6 @@ id recyclerView
 id seekBar
 id singerName
 id songIcon
-id songIconn
 id songName
 layout activity_external_audio_file
 layout activity_main

@@ -14,35 +14,35 @@ public class FragmentNowPlayingMusicBindingImpl extends FragmentNowPlayingMusicB
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.icon, 1);
-        sViewsWithIds.put(R.id.songName, 2);
-        sViewsWithIds.put(R.id.singerName, 3);
-        sViewsWithIds.put(R.id.prev, 4);
-        sViewsWithIds.put(R.id.playPauseButton, 5);
-        sViewsWithIds.put(R.id.next, 6);
+        sViewsWithIds.put(R.id.llNowPlaying, 1);
+        sViewsWithIds.put(R.id.icon, 2);
+        sViewsWithIds.put(R.id.songName, 3);
+        sViewsWithIds.put(R.id.singerName, 4);
+        sViewsWithIds.put(R.id.prev, 5);
+        sViewsWithIds.put(R.id.playPauseButton, 6);
+        sViewsWithIds.put(R.id.next, 7);
     }
     // views
-    @NonNull
-    private final androidx.cardview.widget.CardView mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentNowPlayingMusicBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentNowPlayingMusicBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[1]
+            , (androidx.cardview.widget.CardView) bindings[0]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.LinearLayout) bindings[1]
+            , (android.widget.ImageView) bindings[7]
             , (android.widget.ImageView) bindings[6]
             , (android.widget.ImageView) bindings[5]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[2]
             );
-        this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];
-        this.mboundView0.setTag(null);
+        this.cardView.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

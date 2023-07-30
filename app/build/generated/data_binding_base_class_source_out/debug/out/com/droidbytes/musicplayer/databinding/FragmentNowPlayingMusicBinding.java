@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.droidbytes.musicplayer.R;
@@ -16,7 +18,13 @@ import java.lang.Object;
 
 public abstract class FragmentNowPlayingMusicBinding extends ViewDataBinding {
   @NonNull
+  public final CardView cardView;
+
+  @NonNull
   public final ImageView icon;
+
+  @NonNull
+  public final LinearLayout llNowPlaying;
 
   @NonNull
   public final ImageView next;
@@ -34,10 +42,13 @@ public abstract class FragmentNowPlayingMusicBinding extends ViewDataBinding {
   public final TextView songName;
 
   protected FragmentNowPlayingMusicBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ImageView icon, ImageView next, ImageView playPauseButton,
-      ImageView prev, TextView singerName, TextView songName) {
+      int _localFieldCount, CardView cardView, ImageView icon, LinearLayout llNowPlaying,
+      ImageView next, ImageView playPauseButton, ImageView prev, TextView singerName,
+      TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.cardView = cardView;
     this.icon = icon;
+    this.llNowPlaying = llNowPlaying;
     this.next = next;
     this.playPauseButton = playPauseButton;
     this.prev = prev;

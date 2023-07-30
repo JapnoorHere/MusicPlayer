@@ -13,7 +13,7 @@ data class Songs(
 
 
 fun nextSong() {
-    if (MusicActivity.songPosition == MusicActivity.songsList.size - 1) {
+    if (MusicActivity.songPosition == MusicActivity.songsList!!.size - 1) {
         MusicActivity.songPosition = 0
     } else {
         ++MusicActivity.songPosition
@@ -23,7 +23,7 @@ fun nextSong() {
 
 fun prevSong() {
     if (MusicActivity.songPosition == 0) {
-        MusicActivity.songPosition = MusicActivity.songsList.size - 1
+        MusicActivity.songPosition = MusicActivity.songsList!!.size - 1
     } else {
         --MusicActivity.songPosition
     }

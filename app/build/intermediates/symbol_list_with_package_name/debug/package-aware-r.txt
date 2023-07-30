@@ -3318,6 +3318,7 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id centerCrop
@@ -3512,6 +3513,7 @@ id line3
 id linear
 id listMode
 id list_item
+id llNowPlaying
 id m3_side_sheet
 id marquee
 id masked
@@ -3692,7 +3694,6 @@ id snackbar_text
 id snap
 id snapMargins
 id songIcon
-id songIconn
 id songName
 id south
 id spacer

@@ -5,12 +5,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:id="@+id/cardView"
         app:cardBackgroundColor="#C8D6D5"
         app:cardCornerRadius="50dp">
 
         <LinearLayout
+            android:id="@+id/llNowPlaying"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center">
 
             <androidx.cardview.widget.CardView
@@ -28,6 +30,7 @@
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,6 +38,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:maxLines="1"
                     android:id="@+id/songName"
                     android:layout_width="wrap_content"
@@ -45,6 +49,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/singerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,24 +68,25 @@
 
                 <ImageView
                     android:id="@+id/prev"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_gravity="center"
                     android:src="@drawable/previous" />
 
                 <ImageView
                     android:id="@+id/playPauseButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_gravity="center"
                     android:src="@drawable/play" />
 
                 <ImageView
+                    android:layout_marginEnd="20dp"
                     android:id="@+id/next"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:src="@drawable/next" />
             </LinearLayout>

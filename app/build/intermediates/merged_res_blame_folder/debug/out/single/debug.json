@@ -52,6 +52,10 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\drawable\\music.png"
     },
     {
+        "merged": "com.droidbytes.musicplayer.app-merged_res-39:/layout_fragment_now_playing_music.xml.flat",
+        "source": "com.droidbytes.musicplayer.app-main-41:/layout/fragment_now_playing_music.xml"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\drawable_next.png.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\drawable\\next.png"
     },
@@ -74,10 +78,6 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-41:\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.droidbytes.musicplayer.app-merged_res-39:/layout_activity_music.xml.flat",
-        "source": "com.droidbytes.musicplayer.app-main-41:/layout/activity_music.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-39:\\layout_activity_music.xml.flat",

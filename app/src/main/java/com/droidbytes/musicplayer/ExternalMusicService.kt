@@ -42,9 +42,14 @@ class ExternalMusicService : Service(), AudioManager.OnAudioFocusChangeListener 
             mediaPlayer.reset()
             mediaPlayer.setDataSource(ExternalAudioFileActivity.audioFilePath)
             mediaPlayer.prepare()
-            ExternalAudioFileActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+            ExternalAudioFileActivity.binding.playPauseButton.setImageDrawable(
+                resources.getDrawable(
+                    R.drawable.pause
+                )
+            )
             ExternalAudioFileActivity.binding.seekBar.progress = 0F
-            ExternalAudioFileActivity.binding.seekBar.max = ExternalAudioFileActivity.externalMusicService!!.mediaPlayer.duration.toFloat()
+            ExternalAudioFileActivity.binding.seekBar.max =
+                ExternalAudioFileActivity.externalMusicService!!.mediaPlayer.duration.toFloat()
         } catch (e: Exception) {
             println(e.toString())
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
@@ -70,7 +75,7 @@ class ExternalMusicService : Service(), AudioManager.OnAudioFocusChangeListener 
             } else {
                 try {
                     mediaPlayer.reset()
-                    mediaPlayer.setDataSource(applicationContext,uri)
+                    mediaPlayer.setDataSource(applicationContext, uri)
                     mediaPlayer.prepare()
                     mediaPlayer.start()
                     isPaused = false
@@ -120,12 +125,17 @@ class ExternalMusicService : Service(), AudioManager.OnAudioFocusChangeListener 
     }
 
     override fun onAudioFocusChange(focusChange: Int) {
-        if(focusChange <= 0){
-            //pause music
+        if (focusChange <= 0) {
             ExternalAudioFileActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
-//            NowPlaying.binding.playPauseBtnNP.setIconResource(R.drawable.play_icon)
             ExternalAudioFileActivity.isPlaying = false
             mediaPlayer.pause()
         }
+        else{
+            ExternalAudioFileActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
+            ExternalAudioFileActivity.isPlaying = true
+            mediaPlayer.start()
+        }
+
     }
+
 }

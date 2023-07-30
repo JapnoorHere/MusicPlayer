@@ -17,7 +17,13 @@ import me.tankery.lib.circularseekbar.CircularSeekBar;
 
 public abstract class ActivityExternalAudioFileBinding extends ViewDataBinding {
   @NonNull
+  public final ImageView nextButton;
+
+  @NonNull
   public final ImageView playPauseButton;
+
+  @NonNull
+  public final ImageView prevButton;
 
   @NonNull
   public final CircularSeekBar seekBar;
@@ -26,19 +32,21 @@ public abstract class ActivityExternalAudioFileBinding extends ViewDataBinding {
   public final TextView singerName;
 
   @NonNull
-  public final ImageView songIconn;
+  public final ImageView songIcon;
 
   @NonNull
   public final TextView songName;
 
   protected ActivityExternalAudioFileBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, ImageView playPauseButton, CircularSeekBar seekBar, TextView singerName,
-      ImageView songIconn, TextView songName) {
+      int _localFieldCount, ImageView nextButton, ImageView playPauseButton, ImageView prevButton,
+      CircularSeekBar seekBar, TextView singerName, ImageView songIcon, TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.nextButton = nextButton;
     this.playPauseButton = playPauseButton;
+    this.prevButton = prevButton;
     this.seekBar = seekBar;
     this.singerName = singerName;
-    this.songIconn = songIconn;
+    this.songIcon = songIcon;
     this.songName = songName;
   }
 

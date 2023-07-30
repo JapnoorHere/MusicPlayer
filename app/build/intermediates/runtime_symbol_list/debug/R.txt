@@ -3317,6 +3317,7 @@ int id cache_measures 0x7f0a0065
 int id callMeasure 0x7f0a0066
 int id cancel_action 0x7f0a0067
 int id cancel_button 0x7f0a0068
+int id cardView 0x7f0a0246
 int id carryVelocity 0x7f0a0069
 int id center 0x7f0a006a
 int id centerCrop 0x7f0a006b
@@ -3511,6 +3512,7 @@ int id line3 0x7f0a0127
 int id linear 0x7f0a0128
 int id listMode 0x7f0a0129
 int id list_item 0x7f0a012a
+int id llNowPlaying 0x7f0a0247
 int id m3_side_sheet 0x7f0a012b
 int id marquee 0x7f0a012c
 int id masked 0x7f0a012d
@@ -3691,7 +3693,6 @@ int id snackbar_text 0x7f0a01db
 int id snap 0x7f0a01dc
 int id snapMargins 0x7f0a01dd
 int id songIcon 0x7f0a01de
-int id songIconn 0x7f0a0245
 int id songName 0x7f0a01df
 int id south 0x7f0a01e0
 int id spacer 0x7f0a01e1

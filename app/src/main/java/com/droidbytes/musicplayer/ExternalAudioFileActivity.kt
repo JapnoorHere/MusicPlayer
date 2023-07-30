@@ -1,6 +1,7 @@
 package com.droidbytes.musicplayer
 
 import android.content.ComponentName
+import android.content.ContentUris
 import android.content.Intent
 import android.content.ServiceConnection
 import android.database.Cursor
@@ -97,9 +98,6 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         } else {
             bindService()
             getSongDetails()
-            Glide.with(this@ExternalAudioFileActivity)
-                .load(songIcon)
-                .into(binding.songIconn)
             setMusicLayout()
             binding.playPauseButton.setOnClickListener {
                 if (isPlaying) {
@@ -160,7 +158,7 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         }
         Glide.with(this@ExternalAudioFileActivity)
             .load(songIcon)
-            .into(binding.songIconn)
+            .into(binding.songIcon)
         binding.singerName.text = singerName
         binding.songName.text = songName
     }
@@ -170,26 +168,27 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         try {
             val projection = arrayOf(MediaStore.Audio.Media.DATA, MediaStore.Audio.Media.DURATION,
             MediaStore.Audio.Media.TITLE,MediaStore.Audio.Media.ARTIST,MediaStore.Audio.Media.ALBUM_ID)
-            val selection = "${MediaStore.Audio.Media.DATA} = ?"
-            val selectionArgs = arrayOf(songIcon)
+            val selection = MediaStore.Audio.Media._ID + " = ?"
+            val selectionArgs = arrayOf(ContentUris.parseId(songUri!!).toString())
             cursor =
                 this.contentResolver.query(
                     MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                    projection, selection, arrayOf(songIcon.toString()),null)
-            println(songUri.toString().toUri())
-            val dataColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
-            val durationColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
-            val songColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)
-            val singerColumn = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)
-            val albumIdIndex = cursor?.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID)
-            if(cursor!!.moveToFirst()) {
-                audioFilePath = dataColumn?.let { cursor.getString(it) }.toString()
-                songDuration = durationColumn?.let { cursor.getLong(it) }!!
-                songName = songColumn?.let { cursor.getString(it) }!!
-                singerName = singerColumn?.let { cursor.getString(it) }!!
-                songIcon = getAlbumArtUri(albumIdIndex!!.toLong())
-                println("songIcon" + songIcon)
+                    projection, selection, selectionArgs,null)
+            cursor?.use {
+                if (it.moveToFirst()) {
+                    val dataColumn = it.getString(it.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA))
+                    val songTitleColumn = it.getString(it.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE))
+                    val singerColumn = it.getString(it.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST))
+                    val albumId = it.getLong(it.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID))
+                    val durationColumn = it.getLong(it.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION))
+                    audioFilePath = dataColumn
+                    songDuration = durationColumn
+                    songName = songTitleColumn
+                    singerName = singerColumn
+                    songIcon = Uri.parse("content://media/external/audio/albumart/$albumId")
+                }
             }
+
         } finally {
             cursor?.close()
         }
@@ -242,10 +241,6 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
         startService(intent)
     }
 
-    private fun getAlbumArtUri(albumId: Long): Uri? {
-        val uri = Uri.parse("content://media/external/audio/albumart")
-        return Uri.withAppendedPath(uri, albumId.toString())
-    }
 
     override fun onCompletion(p0: MediaPlayer?) {
         finish()

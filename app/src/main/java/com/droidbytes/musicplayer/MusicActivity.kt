@@ -21,6 +21,7 @@ import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.droidbytes.musicplayer.databinding.ActivityMusicBinding
 import androidx.palette.graphics.Palette
+import java.io.FileNotFoundException
 
 
 class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
@@ -29,11 +30,11 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         var musicBound = false
         lateinit var binding: ActivityMusicBinding
         var musicService: MusicService? = null
-        lateinit var songsList: ArrayList<Songs>
+        var songsList: ArrayList<Songs>? = null
         private var handler = Handler()
         var isPlaying = false
         var songPosition: Int = 0
-        var nowPlayingSongId : String = ""
+        var nowPlayingSongId: String = ""
     }
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -66,7 +67,6 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
     }
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMusicBinding.inflate(layoutInflater)
@@ -83,8 +83,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             println(binding.seekBar.progress.toInt())
             if (isPlaying) binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
             else binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
-        }
-        else{
+        } else {
             bindService()
         }
 //        updatePlayPauseButton()
@@ -129,12 +128,29 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             }
         })
     }
-    private fun getBitmapFromUri(uri: Uri): Bitmap {
+
+    private fun getBitmapFromUri(uri: Uri): Bitmap? {
         // Load the image from the URI and create a Bitmap
-        return contentResolver.openInputStream(uri)?.use { inputStream ->
-            BitmapFactory.decodeStream(inputStream)
-        } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
+        try {
+            return contentResolver.openInputStream(uri)?.use { inputStream ->
+                BitmapFactory.decodeStream(inputStream)
+            } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
+        } catch (e: FileNotFoundException) {
+            // Handle the FileNotFoundException here
+            // For example, show an error message to the user
+            Toast.makeText(this, "File not found!", Toast.LENGTH_SHORT).show();
+            finish()
+            e.printStackTrace();
+        } catch (e: java.lang.IllegalArgumentException) {
+            // Handle the IllegalArgumentException here
+            // For example, show an error message to the user
+            Toast.makeText(this, e.localizedMessage.toString(), Toast.LENGTH_SHORT).show();
+
+            e.printStackTrace();
+        }
+        return null
     }
+
 
     private fun createMediaPlayer() {
         try {
@@ -142,58 +158,63 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
                 musicService!!.mediaPlayer = MediaPlayer()
             }
             musicService!!.mediaPlayer.reset()
-            musicService!!.mediaPlayer.setDataSource(songsList[songPosition].filePath)
+            musicService!!.mediaPlayer.setDataSource(songsList!![songPosition].filePath)
             musicService!!.mediaPlayer.prepare()
             binding.seekBar.progress = 0F
             binding.seekBar.max = musicService!!.mediaPlayer.duration.toFloat()
             musicService!!.mediaPlayer.setOnCompletionListener(this@MusicActivity)
             playMusic()
-            nowPlayingSongId = songsList[songPosition].id
+            nowPlayingSongId = songsList!![songPosition].id
         } catch (e: Exception) {
             println(e.toString())
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+            println(e.localizedMessage?.toString())
+            Toast.makeText(this, e.localizedMessage.toString(), Toast.LENGTH_LONG).show()
         }
     }
 
 
     private fun setMusicLayout() {
-        val bitmap = getBitmapFromUri(songsList[songPosition].albumArtUri!!.toUri())
-        Palette.from(bitmap).generate { palette ->
-            val vibrantColor = palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
-            val gradientDrawable = GradientDrawable(
-                GradientDrawable.Orientation.TOP_BOTTOM,
-                intArrayOf(vibrantColor!!, Color.WHITE)
-            )
-            gradientDrawable.cornerRadius = 0f
-            binding.root.background = gradientDrawable
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = vibrantColor
+        val bitmap = getBitmapFromUri(songsList!![songPosition].albumArtUri!!.toUri())
+        if(bitmap!=null) {
+            Palette.from(bitmap).generate { palette ->
+                val vibrantColor =
+                    palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
+                val lightVibrantColor = vibrantColor?.let {
+                    Color.argb(
+                        50,
+                        Color.red(it),
+                        Color.green(it),
+                        Color.blue(it)
+                    )
+                }
+                val gradientDrawable = GradientDrawable(
+                    GradientDrawable.Orientation.TOP_BOTTOM,
+                    intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
+                )
+                gradientDrawable.cornerRadius = 0f
+                binding.root.background = gradientDrawable
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    window.statusBarColor = vibrantColor
+                }
             }
         }
-        binding.singerName.text = songsList[songPosition].artist
-        binding.songName.text = songsList[songPosition].name
-        println(songsList[songPosition].albumArtUri)
-        Glide.with(this@MusicActivity).load(songsList[songPosition].albumArtUri)
+        binding.singerName.text = songsList!![songPosition].artist
+        binding.songName.text = songsList!![songPosition].name
+        println(songsList!![songPosition].albumArtUri)
+        Glide.with(this@MusicActivity).load(songsList!![songPosition].albumArtUri)
             .into(binding.songIcon)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if(songsList[songPosition].id == "Unknown" && !isPlaying) exitApplication()
+        if (songsList!![songPosition].id == "Unknown" && !isPlaying) exitApplication()
     }
 
-    fun bindService(){
+    fun bindService() {
         musicBound = true
         val musicIntent = Intent(this, MusicService::class.java)
         bindService(musicIntent, musicConnection, BIND_AUTO_CREATE)
         startService(intent)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        if (musicService == null) {
-
-        }
     }
 
     private fun playMusic() {

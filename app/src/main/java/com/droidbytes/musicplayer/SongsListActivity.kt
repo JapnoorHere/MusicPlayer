@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBinding
 
 class SongsListActivity : AppCompatActivity() {
-    private lateinit var binding : ActivitySongsListBinding
+
+    lateinit var binding: ActivitySongsListBinding
     private lateinit var songAdapter: SongAdapter
     private lateinit var songsList : ArrayList<Songs>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class SongsListActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)
         binding.recyclerView.adapter=songAdapter
 
-            val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
         val projection = arrayOf(
             Media._ID,
@@ -56,6 +57,7 @@ class SongsListActivity : AppCompatActivity() {
             it.name
         }
         songAdapter=SongAdapter(this@SongsListActivity,songsList)
+        songAdapter.notifyDataSetChanged()
         binding.recyclerView.layoutManager=LinearLayoutManager(this@SongsListActivity)
         binding.recyclerView.adapter=songAdapter
     }
@@ -66,7 +68,8 @@ class SongsListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (MusicActivity.musicService != null) binding.nowPlaying.visibility = View.VISIBLE
+        if (MusicActivity.musicService != null)
+            binding.nowPlaying.visibility = View.VISIBLE
         else
             binding.nowPlaying.visibility = View.GONE
     }

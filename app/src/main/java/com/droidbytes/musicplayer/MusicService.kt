@@ -49,8 +49,8 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
                 println("null" + "yes")
             }
             mediaPlayer.reset()
-            println("ye h ->" + MusicActivity.songsList[MusicActivity.songPosition].filePath)
-            mediaPlayer.setDataSource(MusicActivity.songsList[MusicActivity.songPosition].filePath)
+            println("ye h ->" + MusicActivity.songsList!![MusicActivity.songPosition].filePath)
+            mediaPlayer.setDataSource(MusicActivity.songsList!![MusicActivity.songPosition].filePath)
             mediaPlayer.prepare()
             MusicActivity.binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.pause))
             MusicActivity.binding.seekBar.progress = 0F

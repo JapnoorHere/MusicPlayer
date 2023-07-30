@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F2FFFC"
+        android:background="@color/white"
         tools:context=".AudioActivity">
 
         <TextView
@@ -100,17 +100,17 @@
 
                 <ImageView
                     android:id="@+id/prevButton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:src="@drawable/previous" />
 
                 <ImageView
                     android:id="@+id/playPauseButton"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -118,13 +118,12 @@
 
                 <ImageView
                     android:id="@+id/nextButton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/next" />
-
 
             </LinearLayout>
         </LinearLayout>
