@@ -4,6 +4,10 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\activity_music.xml"
     },
     {
+        "merged": "com.droidbytes.musicplayer.app-mergeDebugResources-39:/layout/fragment_now_playing_music.xml",
+        "source": "com.droidbytes.musicplayer.app-main-42:/layout/fragment_now_playing_music.xml"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-mergeDebugResources-39:\\layout\\activity_songs_list.xml",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\activity_songs_list.xml"
     },
@@ -18,9 +22,5 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-mergeDebugResources-39:\\layout\\fragment_now_playing_music.xml",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\fragment_now_playing_music.xml"
-    },
-    {
-        "merged": "com.droidbytes.musicplayer.app-mergeDebugResources-39:/layout/song_item.xml",
-        "source": "com.droidbytes.musicplayer.app-main-42:/layout/song_item.xml"
     }
 ]

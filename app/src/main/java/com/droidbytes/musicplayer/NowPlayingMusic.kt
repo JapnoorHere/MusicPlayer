@@ -19,6 +19,7 @@ import androidx.palette.graphics.Palette
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.droidbytes.musicplayer.databinding.FragmentNowPlayingMusicBinding
+import com.droidbytes.musicplayer.databinding.SongItemBinding
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -28,6 +29,10 @@ class NowPlayingMusic : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentNowPlayingMusicBinding
     lateinit var songsListActivity: SongsListActivity
+
+    companion object{
+        var vibrantColor : Int =0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,46 +118,57 @@ class NowPlayingMusic : Fragment() {
     }
 
     fun setLayout() {
-            val bitmap =
-                getBitmapFromUri(MusicActivity.songsList!![MusicActivity.songPosition].albumArtUri!!.toUri())
-            Palette.from(bitmap).generate { palette ->
-                val vibrantColor = palette?.getVibrantColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.white
-                    )
+        val bitmap =
+            getBitmapFromUri(MusicActivity.songsList!![MusicActivity.songPosition].albumArtUri!!.toUri())
+        Palette.from(bitmap).generate { palette ->
+            vibrantColor = palette?.getVibrantColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.white
                 )
-                val lightVibrantColor = vibrantColor?.let {
-                    Color.argb(
-                        70,
-                        Color.red(it),
-                        Color.green(it),
-                        Color.blue(it)
-                    )
-                }
+            )!!.toInt()
 
-                val gradientDrawable = GradientDrawable(
-                    GradientDrawable.Orientation.LEFT_RIGHT,
-                    intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
+
+            var lightVibrantColor = vibrantColor?.let {
+                Color.argb(
+                    70,
+                    Color.red(it),
+                    Color.green(it),
+                    Color.blue(it)
                 )
-
-                gradientDrawable.cornerRadius = 0f
-                binding.llNowPlaying.background = gradientDrawable
-                songsListActivity.binding.root.background = ColorDrawable(lightVibrantColor)
-                songsListActivity.window.statusBarColor = vibrantColor
             }
+            val red = Color.red(vibrantColor)
+            val green = Color.green(vibrantColor)
+            val blue = Color.blue(vibrantColor)
+
+            val isWhite = (red >= 220 && green >= 220 && blue >= 220)
+
+            if(isWhite){
+                lightVibrantColor = Color.LTGRAY
+                val temp = vibrantColor
+                vibrantColor = lightVibrantColor!!.toInt()
+                lightVibrantColor = temp
+            }
+
+
+
+            val gradientDrawable = GradientDrawable(
+                GradientDrawable.Orientation.LEFT_RIGHT,
+                intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
+            )
+
+
+
+            gradientDrawable.cornerRadius = 0f
+            binding.llNowPlaying.background = gradientDrawable
+            songsListActivity.binding.root.background = ColorDrawable(lightVibrantColor)
+            songsListActivity.window.statusBarColor = vibrantColor
+            songsListActivity.setAdapter()
+        }
         binding.singerName.text = MusicActivity.songsList!![MusicActivity.songPosition].artist
         binding.songName.text = MusicActivity.songsList!![MusicActivity.songPosition].name
         Glide.with(requireContext())
             .load(MusicActivity.songsList!![MusicActivity.songPosition].albumArtUri)
             .into(binding.icon)
     }
-
-    private fun lightenColor(color: Int, lightness: Float): Int {
-        val hsv = FloatArray(3)
-        Color.colorToHSV(color, hsv)
-        hsv[2] += lightness
-        return Color.HSVToColor(hsv)
-    }
-
 }

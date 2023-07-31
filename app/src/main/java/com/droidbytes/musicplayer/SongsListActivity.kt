@@ -73,7 +73,6 @@ class SongsListActivity : AppCompatActivity() {
             binding.nowPlaying.visibility = View.VISIBLE
         else
             binding.nowPlaying.visibility = View.GONE
-
         setAdapter()
     }
 

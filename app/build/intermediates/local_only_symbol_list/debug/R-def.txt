@@ -2,11 +2,13 @@ R_DEF: Internal format may change without notice
 local
 attr? progressDrawable
 attr? thumbDrawable
+color bg_color
 color black
 color darkgreen
 color lightGreen
 color white
 drawable baseline_more_vert_24
+drawable grey_overlay
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable music

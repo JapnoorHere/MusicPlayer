@@ -173,14 +173,13 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         }
     }
 
-
         fun setMusicLayout() {
         val bitmap = getBitmapFromUri(songsList!![songPosition].albumArtUri!!.toUri())
         if(bitmap!=null) {
             Palette.from(bitmap).generate { palette ->
                 vibrantColor =
                     palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))!!
-                val lightVibrantColor = vibrantColor.let {
+                var lightVibrantColor = vibrantColor.let {
                     Color.argb(
                         50,
                         Color.red(it),
@@ -188,10 +187,29 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
                         Color.blue(it)
                     )
                 }
+
+                val red = Color.red(vibrantColor)
+                val green = Color.green(vibrantColor)
+                val blue = Color.blue(vibrantColor)
+
+                val isWhite = (red >= 220 && green >= 220 && blue >= 220)
+
+                if(isWhite){
+                    lightVibrantColor = Color.LTGRAY
+                    val temp = vibrantColor
+                    vibrantColor = lightVibrantColor.toInt()
+                    lightVibrantColor = temp
+                }
+
+
+
+
                 val gradientDrawable = GradientDrawable(
                     GradientDrawable.Orientation.TOP_BOTTOM,
                     intArrayOf(vibrantColor, lightVibrantColor.toInt())
                 )
+
+
                 gradientDrawable.cornerRadius = 0f
                 binding.root.background = gradientDrawable
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

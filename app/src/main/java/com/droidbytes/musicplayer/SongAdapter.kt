@@ -4,6 +4,8 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.IBinder
@@ -44,7 +46,9 @@ class SongAdapter(
         if (MusicActivity.songPosition.toString() == position.toString() && MusicActivity.isPlaying) {
             println(MusicActivity.songPosition.toString() + " " + position.toString())
             holder.binding.lottieView.visibility = View.VISIBLE
-            holder.itemView.background = ColorDrawable(MusicActivity.vibrantColor)
+            holder.binding.root.background = ColorDrawable(NowPlayingMusic.vibrantColor)
+            holder.binding.songName.setTextColor(Color.WHITE)
+            holder.binding.singerName.setTextColor(Color.WHITE)
         } else {
             holder.binding.lottieView.visibility = View.INVISIBLE
         }

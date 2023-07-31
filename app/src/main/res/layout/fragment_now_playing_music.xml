@@ -31,7 +31,7 @@
 
             <LinearLayout
                 android:layout_marginEnd="10dp"
-                android:layout_weight="1"
+                android:layout_weight="1.1x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -43,7 +43,7 @@
                     android:id="@+id/songName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:text="Name"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -53,7 +53,7 @@
                     android:id="@+id/singerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:maxLines="1"
                     android:text="Singer Name"
                     android:textSize="12sp" />
@@ -68,8 +68,9 @@
 
                 <ImageView
                     android:id="@+id/prev"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:padding="5dp"
+                    android:layout_height="30dp"
                     android:layout_marginEnd="5dp"
                     android:layout_gravity="center"
                     android:src="@drawable/previous" />
@@ -85,8 +86,9 @@
                 <ImageView
                     android:layout_marginEnd="20dp"
                     android:id="@+id/next"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:padding="5dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:src="@drawable/next" />
             </LinearLayout>
