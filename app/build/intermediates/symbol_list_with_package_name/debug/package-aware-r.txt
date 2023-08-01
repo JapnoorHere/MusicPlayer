@@ -3226,6 +3226,8 @@ drawable notify_panel_notification_icon_bg
 drawable pause
 drawable play
 drawable previous
+drawable search
+drawable search_bg
 drawable seek_bar
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3417,6 +3419,7 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etSearch
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork

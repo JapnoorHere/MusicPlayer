@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBinding
@@ -14,15 +16,39 @@ class SongsListActivity : AppCompatActivity() {
     lateinit var binding: ActivitySongsListBinding
     private lateinit var songAdapter: SongAdapter
     private lateinit var songsList: ArrayList<Songs>
+    lateinit var filteredList : ArrayList<Songs>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySongsListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         songsList = ArrayList()
+        filteredList = ArrayList()
+
         songAdapter = SongAdapter(this@SongsListActivity, songsList)
         binding.recyclerView.layoutManager = LinearLayoutManager(this@SongsListActivity)
         binding.recyclerView.adapter = songAdapter
+
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                filteredList = ArrayList<Songs>()
+                for (each in songsList) {
+                    if (each.name.toLowerCase().contains(s.toString().toLowerCase()) ||
+                        each.artist.toLowerCase().contains(s.toString().toLowerCase()))
+                    {
+                        filteredList.add(each)
+                    }
+                }
+                songAdapter.filteredList(filteredList)
+            }
+        })
 
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
@@ -69,10 +95,13 @@ class SongsListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        binding.etSearch.text.clear()
         if (MusicActivity.musicService != null)
             binding.nowPlaying.visibility = View.VISIBLE
         else
             binding.nowPlaying.visibility = View.GONE
+        songAdapter.filteredList(filteredList)
+        songAdapter.unfilterList()
         setAdapter()
     }
 

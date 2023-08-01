@@ -4,10 +4,6 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.droidbytes.musicplayer.app-merged_res-40:/layout_fragment_now_playing_music.xml.flat",
-        "source": "com.droidbytes.musicplayer.app-main-42:/layout/fragment_now_playing_music.xml"
-    },
-    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\xml\\backup_rules.xml"
     },
@@ -32,6 +28,14 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_search.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\search.png"
+    },
+    {
+        "merged": "com.droidbytes.musicplayer.app-merged_res-40:/layout_activity_songs_list.xml.flat",
+        "source": "com.droidbytes.musicplayer.app-main-42:/layout/activity_songs_list.xml"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_music.png.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\music.png"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_next.png.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\next.png"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_search_bg.xml.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\search_bg.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_previous.png.flat",

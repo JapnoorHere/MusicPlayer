@@ -25,6 +25,7 @@ class SongAdapter(
 ) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {
 
     var holderGlobal : ViewHolder? = null
+    var unfilteredList : ArrayList<Songs> = ArrayList()
 
     class ViewHolder(var binding: SongItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -53,6 +54,7 @@ class SongAdapter(
             holder.binding.lottieView.visibility = View.INVISIBLE
         }
 
+
         Glide.with(songsListActivity)
             .load(songsList[position].albumArtUri)
             .into(holder.binding.icon)
@@ -72,6 +74,16 @@ class SongAdapter(
 
     override fun getItemCount(): Int {
         return songsList.size
+    }
+
+    fun filteredList(filteredList : ArrayList<Songs>){
+        unfilteredList = songsList
+        songsList = filteredList
+        notifyDataSetChanged()
+    }
+
+    fun unfilterList(){
+        songsList = unfilteredList
     }
 
 }

@@ -4,6 +4,7 @@ package com.droidbytes.musicplayer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -16,14 +17,18 @@ import java.lang.Object;
 
 public abstract class ActivitySongsListBinding extends ViewDataBinding {
   @NonNull
+  public final EditText etSearch;
+
+  @NonNull
   public final FragmentContainerView nowPlaying;
 
   @NonNull
   public final RecyclerView recyclerView;
 
   protected ActivitySongsListBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      FragmentContainerView nowPlaying, RecyclerView recyclerView) {
+      EditText etSearch, FragmentContainerView nowPlaying, RecyclerView recyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.etSearch = etSearch;
     this.nowPlaying = nowPlaying;
     this.recyclerView = recyclerView;
   }

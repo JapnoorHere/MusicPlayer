@@ -10,16 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="990177c9-6e23-459e-934f-9679759fd2b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/databinding/ActivitySongsListBindingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/droidbytes/musicplayer/databinding/ActivitySongsListBindingImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/MusicActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/NowPlayingMusic.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/droidbytes/musicplayer/SongsListActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_songs_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_songs_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_playing_music.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +66,13 @@
     "android-custom-viewD:/Projects/Github Android Projects/MusicPlayer/app/src/main/java/com/droidbytes/musicplayer/CircularSeekBar.kt_SELECTED": "CircularSeekBar",
     "cidr.known.project.marker": "true",
     "last_directory_selection": "D:/Projects/Github Android Projects/MusicPlayer/app/src/androidTest/java",
-    "last_opened_file_path": "D:/Projects/Github Android Projects/MusicPlayer/app/src/main/assets"
+    "last_opened_file_path": "D:/Projects/Github Android Projects/MusicPlayer/app/src/main/res/drawable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\Github Android Projects\MusicPlayer\app\src\main\assets" />
       <recent name="D:\Projects\Github Android Projects\MusicPlayer\app\src\main\res\drawable" />
+      <recent name="D:\Projects\Github Android Projects\MusicPlayer\app\src\main\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\Github Android Projects\MusicPlayer\app\src\main\res\drawable" />

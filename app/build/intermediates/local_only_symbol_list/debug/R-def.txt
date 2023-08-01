@@ -16,8 +16,11 @@ drawable next
 drawable pause
 drawable play
 drawable previous
+drawable search
+drawable search_bg
 drawable seek_bar
 id cardView
+id etSearch
 id icon
 id llNowPlaying
 id lottieView
