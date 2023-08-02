@@ -3149,6 +3149,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable layer_list_bg
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3419,7 +3420,6 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id etSearch
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork
@@ -3677,6 +3677,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchView
 id search_badge
 id search_bar
 id search_bar_text_view

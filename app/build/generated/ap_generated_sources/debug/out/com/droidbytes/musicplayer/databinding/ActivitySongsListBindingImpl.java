@@ -14,7 +14,7 @@ public class ActivitySongsListBindingImpl extends ActivitySongsListBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.etSearch, 1);
+        sViewsWithIds.put(R.id.searchView, 1);
         sViewsWithIds.put(R.id.recyclerView, 2);
         sViewsWithIds.put(R.id.nowPlaying, 3);
     }
@@ -31,9 +31,9 @@ public class ActivitySongsListBindingImpl extends ActivitySongsListBinding  {
     }
     private ActivitySongsListBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.EditText) bindings[1]
             , (androidx.fragment.app.FragmentContainerView) bindings[3]
             , (androidx.recyclerview.widget.RecyclerView) bindings[2]
+            , (android.widget.EditText) bindings[1]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);

@@ -17,20 +17,20 @@ import java.lang.Object;
 
 public abstract class ActivitySongsListBinding extends ViewDataBinding {
   @NonNull
-  public final EditText etSearch;
-
-  @NonNull
   public final FragmentContainerView nowPlaying;
 
   @NonNull
   public final RecyclerView recyclerView;
 
+  @NonNull
+  public final EditText searchView;
+
   protected ActivitySongsListBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      EditText etSearch, FragmentContainerView nowPlaying, RecyclerView recyclerView) {
+      FragmentContainerView nowPlaying, RecyclerView recyclerView, EditText searchView) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.etSearch = etSearch;
     this.nowPlaying = nowPlaying;
     this.recyclerView = recyclerView;
+    this.searchView = searchView;
   }
 
   @NonNull

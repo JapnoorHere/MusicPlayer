@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
@@ -14,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.net.toUri
 import androidx.palette.graphics.Palette
 import com.bumptech.glide.Glide
@@ -150,19 +152,22 @@ class NowPlayingMusic : Fragment() {
                 lightVibrantColor = temp
             }
 
-
-
             val gradientDrawable = GradientDrawable(
                 GradientDrawable.Orientation.LEFT_RIGHT,
                 intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
             )
 
-
-
             gradientDrawable.cornerRadius = 0f
             binding.llNowPlaying.background = gradientDrawable
             songsListActivity.binding.root.background = ColorDrawable(lightVibrantColor)
             songsListActivity.window.statusBarColor = vibrantColor
+
+//            val customDrawable = ContextCompat.getDrawable(requireContext(),(R.drawable.layer_list_bg))
+//            customDrawable.let {
+//                customDrawable?.setColorFilter(ContextCompat.getColor(requireContext(), lightVibrantColor.toInt()), PorterDuff.Mode.SRC_IN)
+//                songsListActivity.binding.searchView.background = it
+//            }
+
             songsListActivity.setAdapter()
         }
         binding.singerName.text = MusicActivity.songsList!![MusicActivity.songPosition].artist

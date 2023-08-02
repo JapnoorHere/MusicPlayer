@@ -11,6 +11,7 @@ drawable baseline_more_vert_24
 drawable grey_overlay
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable layer_list_bg
 drawable music
 drawable next
 drawable pause
@@ -20,7 +21,6 @@ drawable search
 drawable search_bg
 drawable seek_bar
 id cardView
-id etSearch
 id icon
 id llNowPlaying
 id lottieView
@@ -32,6 +32,7 @@ id playPauseButton
 id prev
 id prevButton
 id recyclerView
+id searchView
 id seekBar
 id singerName
 id songIcon

@@ -3148,6 +3148,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f0800e8
 int drawable ic_mtrl_chip_checked_circle 0x7f0800e9
 int drawable ic_mtrl_chip_close_circle 0x7f0800ea
 int drawable ic_search_black_24 0x7f0800eb
+int drawable layer_list_bg 0x7f08013f
 int drawable m3_appbar_background 0x7f0800ec
 int drawable m3_avd_hide_password 0x7f0800ed
 int drawable m3_avd_show_password 0x7f0800ee
@@ -3418,7 +3419,6 @@ int id endToStart 0x7f0a00b6
 int id end_padder 0x7f0a00b7
 int id enterAlways 0x7f0a00b8
 int id enterAlwaysCollapsed 0x7f0a00b9
-int id etSearch 0x7f0a00ba
 int id exitUntilCollapsed 0x7f0a00bb
 int id exo_ad_overlay 0x7f0a00bc
 int id exo_artwork 0x7f0a00bd
@@ -3676,6 +3676,7 @@ int id scrollIndicatorDown 0x7f0a01b8
 int id scrollIndicatorUp 0x7f0a01b9
 int id scrollView 0x7f0a01ba
 int id scrollable 0x7f0a01bb
+int id searchView 0x7f0a024f
 int id search_badge 0x7f0a01bc
 int id search_bar 0x7f0a01bd
 int id search_bar_text_view 0x7f0a01be

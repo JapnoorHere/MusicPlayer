@@ -8,6 +8,7 @@ import android.provider.MediaStore.Audio.Media
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBinding
 
@@ -16,7 +17,7 @@ class SongsListActivity : AppCompatActivity() {
     lateinit var binding: ActivitySongsListBinding
     private lateinit var songAdapter: SongAdapter
     private lateinit var songsList: ArrayList<Songs>
-    lateinit var filteredList : ArrayList<Songs>
+    lateinit var filteredList: ArrayList<Songs>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySongsListBinding.inflate(layoutInflater)
@@ -29,24 +30,26 @@ class SongsListActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this@SongsListActivity)
         binding.recyclerView.adapter = songAdapter
 
-        binding.etSearch.addTextChangedListener(object : TextWatcher {
+        binding.searchView.addTextChangedListener(object : TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
             }
 
-            override fun afterTextChanged(s: Editable?) {
-                filteredList = ArrayList<Songs>()
+            override fun afterTextChanged(text: Editable?) {
+                filteredList = ArrayList()
                 for (each in songsList) {
-                    if (each.name.toLowerCase().contains(s.toString().toLowerCase()) ||
-                        each.artist.toLowerCase().contains(s.toString().toLowerCase()))
-                    {
+                    if (each.name.lowercase().contains(text.toString().lowercase()) ||
+                        each.artist.lowercase().contains(text.toString().lowercase())
+                    ) {
                         filteredList.add(each)
                     }
                 }
-                songAdapter.filteredList(filteredList)
+                songAdapter.updateMusicList(filteredList)
             }
         })
 
@@ -95,14 +98,10 @@ class SongsListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.etSearch.text.clear()
         if (MusicActivity.musicService != null)
             binding.nowPlaying.visibility = View.VISIBLE
         else
             binding.nowPlaying.visibility = View.GONE
-        songAdapter.filteredList(filteredList)
-        songAdapter.unfilterList()
-        setAdapter()
     }
 
     fun setAdapter() {

@@ -12,6 +12,10 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\activity_external_audio_file.xml"
     },
     {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_layer_list_bg.xml.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\layer_list_bg.xml"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\layout_activity_music.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\activity_music.xml"
     },

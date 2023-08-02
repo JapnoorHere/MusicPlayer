@@ -20,12 +20,10 @@ import com.droidbytes.musicplayer.databinding.SongItemBinding
 import java.io.File
 
 class SongAdapter(
-    private var songsListActivity: SongsListActivity,
-    private var songsList: ArrayList<Songs>,
-) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {
+    private var songsListActivity: SongsListActivity, private var songsList: ArrayList<Songs>, ) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {
 
-    var holderGlobal : ViewHolder? = null
-    var unfilteredList : ArrayList<Songs> = ArrayList()
+    var holderGlobal: ViewHolder? = null
+    var originalList : ArrayList<Songs>? = null
 
     class ViewHolder(var binding: SongItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -54,15 +52,21 @@ class SongAdapter(
             holder.binding.lottieView.visibility = View.INVISIBLE
         }
 
-
         Glide.with(songsListActivity)
             .load(songsList[position].albumArtUri)
             .into(holder.binding.icon)
-        println(MusicActivity.nowPlayingSongId == songsList[position].id)
+
         holder.itemView.setOnClickListener {
             val intent = Intent(songsListActivity, MusicActivity::class.java)
-            intent.putExtra("songsList", songsList)
-            intent.putExtra("songPosition", position)
+
+            if(originalList !=null) {
+                intent.putExtra("songsList", originalList)
+                intent.putExtra("songPosition", originalList?.indexOf(songsList[position]))
+            }
+            else{
+                intent.putExtra("songsList", songsList)
+                intent.putExtra("songPosition", position)
+            }
             if (MusicActivity.nowPlayingSongId == songsList[position].id) {
                 intent.putExtra("songPosition", MusicActivity.songPosition)
             } else {
@@ -76,14 +80,14 @@ class SongAdapter(
         return songsList.size
     }
 
-    fun filteredList(filteredList : ArrayList<Songs>){
-        unfilteredList = songsList
-        songsList = filteredList
-        notifyDataSetChanged()
-    }
+    fun updateMusicList(searchList : ArrayList<Songs>){
+        if(originalList == null) {
+            originalList = songsList
+        }
 
-    fun unfilterList(){
-        songsList = unfilteredList
+        songsList = ArrayList()
+        songsList.addAll(searchList)
+        notifyDataSetChanged()
     }
 
 }
