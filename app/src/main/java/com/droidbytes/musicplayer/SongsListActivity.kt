@@ -42,6 +42,7 @@ class SongsListActivity : AppCompatActivity() {
 
             override fun afterTextChanged(text: Editable?) {
                 filteredList = ArrayList()
+                filteredList.clear()
                 for (each in songsList) {
                     if (each.name.lowercase().contains(text.toString().lowercase()) ||
                         each.artist.lowercase().contains(text.toString().lowercase())

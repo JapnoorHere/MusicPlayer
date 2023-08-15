@@ -4,16 +4,16 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_repeat.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\repeat.png"
+    },
+    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\xml\\backup_rules.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\layout_activity_external_audio_file.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\activity_external_audio_file.xml"
-    },
-    {
-        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_layer_list_bg.xml.flat",
-        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\layer_list_bg.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\layout_activity_music.xml.flat",
@@ -24,20 +24,24 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_shuffle.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\shuffle.png"
     },
     {
-        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_repeat_on_1.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\repeat_on_1.png"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_search.png.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\search.png"
     },
     {
-        "merged": "com.droidbytes.musicplayer.app-merged_res-40:/layout_activity_songs_list.xml.flat",
-        "source": "com.droidbytes.musicplayer.app-main-42:/layout/activity_songs_list.xml"
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_music.png.flat",
@@ -46,6 +50,10 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_heart.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\heart.png"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\layout_activity_songs_list.xml.flat",
@@ -64,12 +72,12 @@
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\search_bg.xml"
     },
     {
-        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_previous.png.flat",
-        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\previous.png"
-    },
-    {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_pause.png.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\pause.png"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_previous.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\previous.png"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
@@ -82,6 +90,14 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_seek_bar.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\seek_bar.xml"
+    },
+    {
+        "merged": "com.droidbytes.musicplayer.app-merged_res-40:/layout_activity_music.xml.flat",
+        "source": "com.droidbytes.musicplayer.app-main-42:/layout/activity_music.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_heart_on.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\heart_on.png"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -118,6 +134,10 @@
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\layout_song_item.xml.flat",
         "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\layout\\song_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_shuffle_on.png.flat",
+        "source": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-main-42:\\drawable\\shuffle_on.png"
     },
     {
         "merged": "C:\\Users\\sjapn\\.gradle\\daemon\\8.0\\com.droidbytes.musicplayer.app-merged_res-40:\\drawable_baseline_more_vert_24.xml.flat",

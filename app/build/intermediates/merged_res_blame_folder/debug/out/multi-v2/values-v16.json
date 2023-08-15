@@ -4,16 +4,6 @@
             "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-38:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\dcf59f4e5b748679afdaae61fff45bff\\transformed\\core-1.12.0-beta01\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
                     "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\6f26defcd9545a930a929752398275fc\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\4ef330022ef2fddd24fc3c090760aad0\\transformed\\core-1.12.0-rc01\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

@@ -21,22 +21,22 @@
 14-->[com.google.android.exoplayer:exoplayer-core:2.19.0] C:\Users\sjapn\.gradle\caches\transforms-3\a7e46e29c1bf324587f3a96f3e829483\transformed\exoplayer-core-2.19.0\AndroidManifest.xml:24:22-76
 15
 16    <permission
-16-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:22:5-24:47
+16-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:22:5-24:47
 17        android:name="com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-17-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:23:9-81
+17-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:23:9-81
 18        android:protectionLevel="signature" />
-18-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:24:9-44
+18-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:24:9-44
 19
 20    <uses-permission android:name="com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-20-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:5-97
-20-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:22-94
+20-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:22-94
 21
 22    <application
 22-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:9:5-60:19
 23        android:allowBackup="true"
 23-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:10:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:18-86
+24-->[androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
 25-->D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:11:9-65
 26        android:debuggable="true"

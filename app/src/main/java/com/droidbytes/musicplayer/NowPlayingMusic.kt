@@ -32,8 +32,8 @@ class NowPlayingMusic : Fragment() {
     lateinit var binding: FragmentNowPlayingMusicBinding
     lateinit var songsListActivity: SongsListActivity
 
-    companion object{
-        var vibrantColor : Int =0
+    companion object {
+        var vibrantColor: Int = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +56,8 @@ class NowPlayingMusic : Fragment() {
         }
 
         binding.next.setOnClickListener {
+            songsListActivity.setAdapter()
+            songsListActivity.binding.searchView.text.clear()
             nextSong()
             MusicActivity.musicService?.createMediaPlayer()
             setLayout()
@@ -63,6 +65,8 @@ class NowPlayingMusic : Fragment() {
         }
 
         binding.prev.setOnClickListener {
+            songsListActivity.setAdapter()
+            songsListActivity.binding.searchView.text.clear()
             prevSong()
             MusicActivity.musicService?.createMediaPlayer()
             setLayout()
@@ -145,31 +149,46 @@ class NowPlayingMusic : Fragment() {
 
             val isWhite = (red >= 220 && green >= 220 && blue >= 220)
 
-            if(isWhite){
-                lightVibrantColor = Color.LTGRAY
-                val temp = vibrantColor
-                vibrantColor = lightVibrantColor!!.toInt()
-                lightVibrantColor = temp
+            if (isWhite) {
+//                    lightVibrantColor = vibrantColor
+//                    vibrantColor = Color.LTGRAY
+                Palette.from(bitmap).generate() { palette ->
+                    var mutedColor =
+                        palette?.getMutedColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.white
+                            )
+                        )!!
+                    var lightMutedColor = mutedColor.let {
+                        Color.argb(
+                            50,
+                            Color.red(it),
+                            Color.green(it),
+                            Color.blue(it)
+                        )
+                    }
+                    vibrantColor = mutedColor
+                    setGradient(lightMutedColor, mutedColor)
+                }
+            } else {
+                setGradient(lightVibrantColor!!, vibrantColor)
             }
-
-            val gradientDrawable = GradientDrawable(
-                GradientDrawable.Orientation.LEFT_RIGHT,
-                intArrayOf(vibrantColor!!, lightVibrantColor!!.toInt())
-            )
-
-            gradientDrawable.cornerRadius = 0f
-            binding.llNowPlaying.background = gradientDrawable
-            songsListActivity.binding.root.background = ColorDrawable(lightVibrantColor)
-            songsListActivity.window.statusBarColor = vibrantColor
-
-//            val customDrawable = ContextCompat.getDrawable(requireContext(),(R.drawable.layer_list_bg))
-//            customDrawable.let {
-//                customDrawable?.setColorFilter(ContextCompat.getColor(requireContext(), lightVibrantColor.toInt()), PorterDuff.Mode.SRC_IN)
-//                songsListActivity.binding.searchView.background = it
-//            }
-
-            songsListActivity.setAdapter()
         }
+    }
+
+    fun setGradient(lightColor: Int, darkColor: Int) {
+        val gradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.LEFT_RIGHT,
+            intArrayOf(lightColor, darkColor.toInt())
+        )
+
+        gradientDrawable.cornerRadius = 0f
+        binding.llNowPlaying.background = gradientDrawable
+        songsListActivity.binding.root.background = ColorDrawable(lightColor)
+        songsListActivity.window.statusBarColor = darkColor
+        songsListActivity.binding.searchView.setBackgroundColor(darkColor)
+        songsListActivity.setAdapter()
         binding.singerName.text = MusicActivity.songsList!![MusicActivity.songPosition].artist
         binding.songName.text = MusicActivity.songsList!![MusicActivity.songPosition].name
         Glide.with(requireContext())

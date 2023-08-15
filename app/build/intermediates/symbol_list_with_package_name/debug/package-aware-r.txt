@@ -3129,6 +3129,8 @@ drawable exo_styled_controls_subtitle_off
 drawable exo_styled_controls_subtitle_on
 drawable exo_styled_controls_vr
 drawable grey_overlay
+drawable heart
+drawable heart_on
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3149,7 +3151,6 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
-drawable layer_list_bg
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3227,9 +3228,13 @@ drawable notify_panel_notification_icon_bg
 drawable pause
 drawable play
 drawable previous
+drawable repeat
+drawable repeat_on_1
 drawable search
 drawable search_bg
 drawable seek_bar
+drawable shuffle
+drawable shuffle_on
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3473,6 +3478,7 @@ id exo_vr
 id expand_activities_button
 id expanded_menu
 id fade
+id fav
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3657,6 +3663,7 @@ id radio
 id ratio
 id rectangles
 id recyclerView
+id repeat
 id restart
 id reverse
 id reverseSawtooth

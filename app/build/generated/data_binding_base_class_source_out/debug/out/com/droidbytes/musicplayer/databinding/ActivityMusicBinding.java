@@ -17,6 +17,9 @@ import me.tankery.lib.circularseekbar.CircularSeekBar;
 
 public abstract class ActivityMusicBinding extends ViewDataBinding {
   @NonNull
+  public final ImageView fav;
+
+  @NonNull
   public final ImageView nextButton;
 
   @NonNull
@@ -24,6 +27,9 @@ public abstract class ActivityMusicBinding extends ViewDataBinding {
 
   @NonNull
   public final ImageView prevButton;
+
+  @NonNull
+  public final ImageView repeat;
 
   @NonNull
   public final CircularSeekBar seekBar;
@@ -38,12 +44,15 @@ public abstract class ActivityMusicBinding extends ViewDataBinding {
   public final TextView songName;
 
   protected ActivityMusicBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView nextButton, ImageView playPauseButton, ImageView prevButton,
-      CircularSeekBar seekBar, TextView singerName, ImageView songIcon, TextView songName) {
+      ImageView fav, ImageView nextButton, ImageView playPauseButton, ImageView prevButton,
+      ImageView repeat, CircularSeekBar seekBar, TextView singerName, ImageView songIcon,
+      TextView songName) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.fav = fav;
     this.nextButton = nextButton;
     this.playPauseButton = playPauseButton;
     this.prevButton = prevButton;
+    this.repeat = repeat;
     this.seekBar = seekBar;
     this.singerName = singerName;
     this.songIcon = songIcon;

@@ -42,7 +42,7 @@ class SongAdapter(
         holder.binding.singerName.text = songsList[position].artist
         holderGlobal = holder
 
-        if (MusicActivity.songPosition.toString() == position.toString() && MusicActivity.isPlaying) {
+        if (MusicActivity.songPosition == position&& MusicActivity.isPlaying) {
             println(MusicActivity.songPosition.toString() + " " + position.toString())
             holder.binding.lottieView.visibility = View.VISIBLE
             holder.binding.root.background = ColorDrawable(NowPlayingMusic.vibrantColor)
@@ -84,7 +84,6 @@ class SongAdapter(
         if(originalList == null) {
             originalList = songsList
         }
-
         songsList = ArrayList()
         songsList.addAll(searchList)
         notifyDataSetChanged()

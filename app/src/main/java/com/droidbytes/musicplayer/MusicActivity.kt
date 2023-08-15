@@ -35,7 +35,9 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         var isPlaying = false
         var songPosition: Int = 0
         var nowPlayingSongId: String = ""
-        var vibrantColor : Int = 0
+        var vibrantColor: Int = 0
+        var fav: Boolean = false
+        var originalMusicList: ArrayList<Songs>? = ArrayList()
     }
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -74,6 +76,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         setContentView(binding.root)
         songsList = ArrayList()
 
+
         songPosition = intent.getIntExtra("songPosition", 0)
         songsList = intent.getSerializableExtra("songsList") as ArrayList<Songs>
         setMusicLayout()
@@ -107,6 +110,18 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             } else {
                 playMusic()
             }
+        }
+
+
+        binding.fav.setOnClickListener {
+            if (fav) {
+                fav = false
+                binding.fav.setImageDrawable(resources.getDrawable(R.drawable.heart))
+            } else {
+                fav = true
+                binding.fav.setImageDrawable(resources.getDrawable(R.drawable.heart_on))
+            }
+
         }
 
         binding.seekBar.setOnSeekBarChangeListener(object :
@@ -173,9 +188,9 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         }
     }
 
-        fun setMusicLayout() {
+    fun setMusicLayout() {
         val bitmap = getBitmapFromUri(songsList!![songPosition].albumArtUri!!.toUri())
-        if(bitmap!=null) {
+        if (bitmap != null) {
             Palette.from(bitmap).generate { palette ->
                 vibrantColor =
                     palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))!!
@@ -194,28 +209,40 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 
                 val isWhite = (red >= 220 && green >= 220 && blue >= 220)
 
-                if(isWhite){
-                    lightVibrantColor = Color.LTGRAY
-                    val temp = vibrantColor
-                    vibrantColor = lightVibrantColor.toInt()
-                    lightVibrantColor = temp
+                if (isWhite) {
+//                    lightVibrantColor = vibrantColor
+//                    vibrantColor = Color.LTGRAY
+                    Palette.from(bitmap).generate() { palette ->
+                        var mutedColor =
+                            palette?.getMutedColor(ContextCompat.getColor(this, R.color.white))!!
+                        lightVibrantColor = mutedColor.let {
+                            Color.argb(
+                                50,
+                                Color.red(it),
+                                Color.green(it),
+                                Color.blue(it)
+                            )
+                        }
+                        setGradient(lightVibrantColor,mutedColor)
+                    }
                 }
-
-
-
-
-                val gradientDrawable = GradientDrawable(
-                    GradientDrawable.Orientation.TOP_BOTTOM,
-                    intArrayOf(vibrantColor, lightVibrantColor.toInt())
-                )
-
-
-                gradientDrawable.cornerRadius = 0f
-                binding.root.background = gradientDrawable
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    window.statusBarColor = vibrantColor
+                else{
+                    setGradient(lightVibrantColor, vibrantColor)
                 }
             }
+        }
+    }
+
+    fun setGradient(lightColor: Int,darkColor : Int) {
+        val gradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(darkColor,lightColor)
+        )
+
+        gradientDrawable.cornerRadius = 0f
+        binding.root.background = gradientDrawable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = darkColor
         }
         binding.singerName.text = songsList!![songPosition].artist
         binding.songName.text = songsList!![songPosition].name
@@ -223,6 +250,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         Glide.with(this@MusicActivity).load(songsList!![songPosition].albumArtUri)
             .into(binding.songIcon)
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -248,13 +276,13 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         binding.playPauseButton.setImageDrawable(resources.getDrawable(R.drawable.play))
     }
 
-    fun getCurrentPosition(): Int {
-        return musicService!!.mediaPlayer.currentPosition
-    }
-
-    fun getDuration(): Int {
-        return musicService!!.mediaPlayer.duration
-    }
+//    fun getCurrentPosition(): Int {
+//        return musicService!!.mediaPlayer.currentPosition
+//    }
+//
+//    fun getDuration(): Int {
+//        return musicService!!.mediaPlayer.duration
+//    }
 
     override fun onResume() {
         super.onResume()
@@ -285,11 +313,11 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         }
     }
 
-    private fun formatTime(timeInMillis: Int): String {
-        val minutes = timeInMillis / 1000 / 60
-        val seconds = timeInMillis / 1000 % 60
-        return String.format("%02d:%02d", minutes, seconds)
-    }
+//    private fun formatTime(timeInMillis: Int): String {
+//        val minutes = timeInMillis / 1000 / 60
+//        val seconds = timeInMillis / 1000 % 60
+//        return String.format("%02d:%02d", minutes, seconds)
+//    }
 
     override fun onCompletion(p0: MediaPlayer?) {
         nextSong()

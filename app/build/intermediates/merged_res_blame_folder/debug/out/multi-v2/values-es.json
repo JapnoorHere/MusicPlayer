@@ -4,6 +4,23 @@
             "outputFile": "com.droidbytes.musicplayer.app-mergeDebugResources-38:/values-es/values-es.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\4ef330022ef2fddd24fc3c090760aad0\\transformed\\core-1.12.0-rc01\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,256,356,454,561,667,787",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "149,251,351,449,556,662,782,883"
+                    },
+                    "to": {
+                        "startLines": "55,56,57,58,59,60,61,171",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "4106,4205,4307,4407,4505,4612,4718,13333",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "4200,4302,4402,4500,4607,4713,4833,13429"
+                    }
+                },
+                {
                     "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\6f26defcd9545a930a929752398275fc\\transformed\\appcompat-1.6.1\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -18,23 +35,6 @@
                         "startOffsets": "931,1033,1146,1254,1339,1440,1568,1654,1735,1827,1921,2018,2112,2212,2306,2402,2498,2590,2682,2764,2871,2982,3081,3189,3297,3404,3563,13250",
                         "endColumns": "101,112,107,84,100,127,85,80,91,93,96,93,99,93,95,95,91,91,81,106,110,98,107,107,106,158,98,82",
                         "endOffsets": "1028,1141,1249,1334,1435,1563,1649,1730,1822,1916,2013,2107,2207,2301,2397,2493,2585,2677,2759,2866,2977,3076,3184,3292,3399,3558,3657,13328"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\sjapn\\.gradle\\caches\\transforms-3\\dcf59f4e5b748679afdaae61fff45bff\\transformed\\core-1.12.0-beta01\\res\\values-es\\values-es.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,356,454,561,667,787",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "149,251,351,449,556,662,782,883"
-                    },
-                    "to": {
-                        "startLines": "55,56,57,58,59,60,61,171",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "4106,4205,4307,4407,4505,4612,4718,13333",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "4200,4302,4402,4500,4607,4713,4833,13429"
                     }
                 },
                 {

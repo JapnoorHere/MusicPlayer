@@ -41,9 +41,9 @@ MERGED from [com.google.android.exoplayer:exoplayer-ui:2.19.0] C:\Users\sjapn\.g
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] C:\Users\sjapn\.gradle\caches\transforms-3\b6f064711dd4b652d3b5e27c3f020feb\transformed\recyclerview-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches\transforms-3\1bc17fb4cc3a6d6edf75020afeff8a91\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
-MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-ktx:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\b6d0d2077a58be57baad6d3b9144f4c7\transformed\core-ktx-1.12.0-rc01\AndroidManifest.xml:2:1-7:12
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\sjapn\.gradle\caches\transforms-3\af1dea311f0cbdfeff6f479af1c9d278\transformed\viewbinding-8.0.2\AndroidManifest.xml:2:1-7:12
@@ -109,8 +109,8 @@ MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\cach
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\sjapn\.gradle\caches\transforms-3\428b2eb71e834e554e54a85e6030ddee\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\sjapn\.gradle\caches\transforms-3\2bb51d096b5686d32235914e21722b9b\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\sjapn\.gradle\caches\transforms-3\2bb51d096b5686d32235914e21722b9b\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:28:5-89
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:9:5-20
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -124,7 +124,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sjapn\.gradle\cach
 	android:requestLegacyExternalStorage
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:15:9-52
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:28:18-86
 	android:supportsRtl
 		ADDED from D:\Projects\Github Android Projects\MusicPlayer\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
@@ -289,12 +289,12 @@ MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\sjapn\.gradle\caches\transforms-3\1bc17fb4cc3a6d6edf75020afeff8a91\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.6.0] C:\Users\sjapn\.gradle\caches\transforms-3\296271c07b4649c589ef8b41969a733f\transformed\media-1.6.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sjapn\.gradle\caches\transforms-3\5d0574d7b1b15efcc423ef04e52e470a\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
-MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\bb1f6261b3c71f1fb1676ff5cd599d63\transformed\core-ktx-1.12.0-beta01\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\b6d0d2077a58be57baad6d3b9144f4c7\transformed\core-ktx-1.12.0-rc01\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\b6d0d2077a58be57baad6d3b9144f4c7\transformed\core-ktx-1.12.0-rc01\AndroidManifest.xml:5:5-44
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:5:5-7:41
 MERGED from [me.tankery.lib:circularSeekBar:1.4.2] C:\Users\sjapn\.gradle\caches\transforms-3\4732426444eb738b8bf6899b1ad8c2ae\transformed\circularSeekBar-1.4.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sjapn\.gradle\caches\transforms-3\7e0c675febf4b37fd76fe3a11686ed76\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -388,25 +388,25 @@ MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.0] C:\Users\sjap
 	android:name
 		ADDED from [com.google.android.exoplayer:exoplayer-core:2.19.0] C:\Users\sjapn\.gradle\caches\transforms-3\a7e46e29c1bf324587f3a96f3e829483\transformed\exoplayer-core-2.19.0\AndroidManifest.xml:24:22-76
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:23:9-81
 permission#com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:23:9-81
 uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:22-94
 uses-permission#com.droidbytes.musicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.12.0-beta01] C:\Users\sjapn\.gradle\caches\transforms-3\dcf59f4e5b748679afdaae61fff45bff\transformed\core-1.12.0-beta01\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.12.0-rc01] C:\Users\sjapn\.gradle\caches\transforms-3\4ef330022ef2fddd24fc3c090760aad0\transformed\core-1.12.0-rc01\AndroidManifest.xml:26:22-94
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\sjapn\.gradle\caches\transforms-3\e1ca8779aa28a96e2446590bf4670520\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 	android:value

@@ -21,6 +21,8 @@ public class ActivityMusicBindingImpl extends ActivityMusicBinding  {
         sViewsWithIds.put(R.id.prevButton, 5);
         sViewsWithIds.put(R.id.playPauseButton, 6);
         sViewsWithIds.put(R.id.nextButton, 7);
+        sViewsWithIds.put(R.id.repeat, 8);
+        sViewsWithIds.put(R.id.fav, 9);
     }
     // views
     @NonNull
@@ -31,13 +33,15 @@ public class ActivityMusicBindingImpl extends ActivityMusicBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityMusicBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
     private ActivityMusicBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.ImageView) bindings[9]
             , (android.widget.ImageView) bindings[7]
             , (android.widget.ImageView) bindings[6]
             , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[8]
             , (me.tankery.lib.circularseekbar.CircularSeekBar) bindings[4]
             , (android.widget.TextView) bindings[2]
             , (android.widget.ImageView) bindings[3]
