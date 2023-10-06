@@ -1,6 +1,8 @@
 package com.droidbytes.musicplayer
 
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -9,6 +11,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.SearchView
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBinding
 
@@ -18,6 +22,8 @@ class SongsListActivity : AppCompatActivity() {
     private lateinit var songAdapter: SongAdapter
     private lateinit var songsList: ArrayList<Songs>
     lateinit var filteredList: ArrayList<Songs>
+    private val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 123
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySongsListBinding.inflate(layoutInflater)
@@ -31,15 +37,8 @@ class SongsListActivity : AppCompatActivity() {
         binding.recyclerView.adapter = songAdapter
 
         binding.searchView.addTextChangedListener(object : TextWatcher {
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(text: Editable?) {
                 filteredList = ArrayList()
                 filteredList.clear()
@@ -54,6 +53,10 @@ class SongsListActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun getSongsFromStorage() {
+        songsList.clear()
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
         val projection = arrayOf(
@@ -114,4 +117,52 @@ class SongsListActivity : AppCompatActivity() {
         }
     }
 
+    private fun isReadStoragePermissionGranted(): Boolean {
+        val permission = android.Manifest.permission.READ_EXTERNAL_STORAGE
+        return ContextCompat.checkSelfPermission(
+            this,
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestReadStoragePermission() {
+        val permission = android.Manifest.permission.READ_EXTERNAL_STORAGE
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(permission),
+            READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getSongsFromStorage()
+            }
+//            else {
+                // Permission denied
+                // Handle the denial or show an explanation to the user
+//            }
+        }
+    }
+
+    override fun onStart() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            if (isReadStoragePermissionGranted()) {
+                getSongsFromStorage()
+            } else {
+                requestReadStoragePermission()
+            }
+        }
+        else{
+            getSongsFromStorage()
+        }
+        super.onStart()
+    }
 }

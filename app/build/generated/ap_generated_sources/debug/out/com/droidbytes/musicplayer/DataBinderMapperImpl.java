@@ -7,6 +7,7 @@ import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.droidbytes.musicplayer.databinding.ActivityExternalAudioFileBindingImpl;
+import com.droidbytes.musicplayer.databinding.ActivityMainBindingImpl;
 import com.droidbytes.musicplayer.databinding.ActivityMusicBindingImpl;
 import com.droidbytes.musicplayer.databinding.ActivitySongsListBindingImpl;
 import com.droidbytes.musicplayer.databinding.FragmentNowPlayingMusicBindingImpl;
@@ -24,18 +25,21 @@ import java.util.List;
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYEXTERNALAUDIOFILE = 1;
 
-  private static final int LAYOUT_ACTIVITYMUSIC = 2;
+  private static final int LAYOUT_ACTIVITYMAIN = 2;
 
-  private static final int LAYOUT_ACTIVITYSONGSLIST = 3;
+  private static final int LAYOUT_ACTIVITYMUSIC = 3;
 
-  private static final int LAYOUT_FRAGMENTNOWPLAYINGMUSIC = 4;
+  private static final int LAYOUT_ACTIVITYSONGSLIST = 4;
 
-  private static final int LAYOUT_SONGITEM = 5;
+  private static final int LAYOUT_FRAGMENTNOWPLAYINGMUSIC = 5;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
+  private static final int LAYOUT_SONGITEM = 6;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_external_audio_file, LAYOUT_ACTIVITYEXTERNALAUDIOFILE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_music, LAYOUT_ACTIVITYMUSIC);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.activity_songs_list, LAYOUT_ACTIVITYSONGSLIST);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.droidbytes.musicplayer.R.layout.fragment_now_playing_music, LAYOUT_FRAGMENTNOWPLAYINGMUSIC);
@@ -56,6 +60,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityExternalAudioFileBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_external_audio_file is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYMAIN: {
+          if ("layout/activity_main_0".equals(tag)) {
+            return new ActivityMainBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_main is invalid. Received: " + tag);
         }
         case  LAYOUT_ACTIVITYMUSIC: {
           if ("layout/activity_music_0".equals(tag)) {
@@ -134,10 +144,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
 
     static {
       sKeys.put("layout/activity_external_audio_file_0", com.droidbytes.musicplayer.R.layout.activity_external_audio_file);
+      sKeys.put("layout/activity_main_0", com.droidbytes.musicplayer.R.layout.activity_main);
       sKeys.put("layout/activity_music_0", com.droidbytes.musicplayer.R.layout.activity_music);
       sKeys.put("layout/activity_songs_list_0", com.droidbytes.musicplayer.R.layout.activity_songs_list);
       sKeys.put("layout/fragment_now_playing_music_0", com.droidbytes.musicplayer.R.layout.fragment_now_playing_music);

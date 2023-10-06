@@ -1494,6 +1494,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color lightGreen
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
@@ -3235,6 +3236,7 @@ drawable search_bg
 drawable seek_bar
 drawable shuffle
 drawable shuffle_on
+drawable splash_music
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3735,6 +3737,7 @@ id south
 id spacer
 id special_effects_controller_view_tag
 id spherical_gl_surface_view
+id splashMusic
 id spline
 id split_action_bar
 id spread
@@ -4053,6 +4056,7 @@ layout select_dialog_singlechoice_material
 layout song_item
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
