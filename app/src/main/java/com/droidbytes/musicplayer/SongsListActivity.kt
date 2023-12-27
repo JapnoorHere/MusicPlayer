@@ -58,7 +58,8 @@ class SongsListActivity : AppCompatActivity() {
     private fun getSongsFromStorage() {
         songsList.clear()
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-        val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
+        val selection = "${MediaStore.Audio.Media.IS_MUSIC} != 0"
+
         val projection = arrayOf(
             Media._ID,
             Media.TITLE,

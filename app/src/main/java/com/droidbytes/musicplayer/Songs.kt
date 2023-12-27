@@ -7,7 +7,7 @@ data class Songs(
     val id: String = "",
     val name: String = "",
     val filePath: String = "",
-    val albumArtUri: String?,
+    var albumArtUri: String?,
     val artist: String = "",
 ) : Serializable
 
@@ -15,6 +15,7 @@ data class Songs(
 fun nextSong() {
     if (MusicActivity.songPosition == MusicActivity.songsList!!.size - 1) {
         MusicActivity.songPosition = 0
+
     } else {
         ++MusicActivity.songPosition
     }

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.net.toUri
@@ -85,12 +86,20 @@ class NowPlayingMusic : Fragment() {
         return binding.root
     }
 
-    private fun getBitmapFromUri(uri: Uri): Bitmap {
-        // Load the image from the URI and create a Bitmap
-        return requireActivity().contentResolver.openInputStream(uri)?.use { inputStream ->
-            BitmapFactory.decodeStream(inputStream)
-        } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
+    private fun getBitmapFromUri(uri: Uri): Bitmap? {
+        return try {
+            // Load the image from the URI and create a Bitmap
+            requireActivity().contentResolver.openInputStream(uri)?.use { inputStream ->
+                BitmapFactory.decodeStream(inputStream)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
+
+    // Example usage
+
 
     private fun playMusic() {
         songsListActivity.setAdapter()
@@ -124,63 +133,65 @@ class NowPlayingMusic : Fragment() {
     }
 
     fun setLayout() {
-        val bitmap =
-            getBitmapFromUri(MusicActivity.songsList!![MusicActivity.songPosition].albumArtUri!!.toUri())
-        Palette.from(bitmap).generate { palette ->
-            vibrantColor = palette?.getVibrantColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.white
-                )
-            )!!.toInt()
+        val bitmap = getBitmapFromUri(MusicActivity.songsList!![MusicActivity.songPosition].albumArtUri!!.toUri())!!
+        if (bitmap != null) {
+            Palette.from(bitmap!!).generate { palette ->
+                vibrantColor = palette?.getVibrantColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white
+                    )
+                )!!.toInt()
 
 
-            var lightVibrantColor = vibrantColor?.let {
-                Color.argb(
-                    70,
-                    Color.red(it),
-                    Color.green(it),
-                    Color.blue(it)
-                )
-            }
-            val red = Color.red(vibrantColor)
-            val green = Color.green(vibrantColor)
-            val blue = Color.blue(vibrantColor)
+                var lightVibrantColor = vibrantColor?.let {
+                    Color.argb(
+                        70,
+                        Color.red(it),
+                        Color.green(it),
+                        Color.blue(it)
+                    )
+                }
+                val red = Color.red(vibrantColor)
+                val green = Color.green(vibrantColor)
+                val blue = Color.blue(vibrantColor)
 
-            val isWhite = (red >= 220 && green >= 220 && blue >= 220)
+                val isWhite = (red >= 220 && green >= 220 && blue >= 220)
 
-            if (isWhite) {
+                if (isWhite) {
 //                    lightVibrantColor = vibrantColor
 //                    vibrantColor = Color.LTGRAY
-                Palette.from(bitmap).generate() { palette ->
-                    var mutedColor =
-                        palette?.getMutedColor(
-                            ContextCompat.getColor(
-                                requireContext(),
-                                R.color.white
+                    Palette.from(bitmap).generate() { palette ->
+                        var mutedColor =
+                            palette?.getMutedColor(
+                                ContextCompat.getColor(
+                                    requireContext(),
+                                    R.color.white
+                                )
+                            )!!
+                        var lightMutedColor = mutedColor.let {
+                            Color.argb(
+                                50,
+                                Color.red(it),
+                                Color.green(it),
+                                Color.blue(it)
                             )
-                        )!!
-                    var lightMutedColor = mutedColor.let {
-                        Color.argb(
-                            50,
-                            Color.red(it),
-                            Color.green(it),
-                            Color.blue(it)
-                        )
+                        }
+                        vibrantColor = mutedColor
+                        setGradient(lightMutedColor, mutedColor)
                     }
-                    vibrantColor = mutedColor
-                    setGradient(lightMutedColor, mutedColor)
+                } else {
+                    setGradient(lightVibrantColor!!, vibrantColor)
                 }
-            } else {
-                setGradient(lightVibrantColor!!, vibrantColor)
             }
         }
+
     }
 
     fun setGradient(lightColor: Int, darkColor: Int) {
         val gradientDrawable = GradientDrawable(
             GradientDrawable.Orientation.LEFT_RIGHT,
-            intArrayOf(lightColor, darkColor.toInt())
+            intArrayOf(lightColor, darkColor)
         )
 
         gradientDrawable.cornerRadius = 0f

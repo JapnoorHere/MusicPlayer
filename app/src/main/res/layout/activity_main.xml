@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4FFE8"
     tools:context=".MainActivity">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:layout_height="200dp"
         android:text="Hello World!"
         android:id="@+id/splashMusic"
-        android:src="@drawable/splash_music"
+        android:src="@drawable/music"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

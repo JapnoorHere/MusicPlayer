@@ -136,15 +136,29 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
             }
         }
     }
-    private fun getBitmapFromUri(uri: Uri?): Bitmap {
-        return contentResolver.openInputStream(uri!!)?.use { inputStream ->
-            BitmapFactory.decodeStream(inputStream)
-        } ?: throw IllegalArgumentException("Unable to load image from URI: $uri")
-    }
 
+    private fun getBitmapFromUri(uri: Uri): Bitmap? {
+        return try {
+            // Load the image from the URI and create a Bitmap
+            contentResolver.openInputStream(uri)?.use { inputStream ->
+                BitmapFactory.decodeStream(inputStream)
+            }
+        } catch (e: Exception) {
+//            e.printStackTrace()
+            null
+        }
+    }
     private fun setMusicLayout() {
-        val bitmap = getBitmapFromUri(songIcon)
-        Palette.from(bitmap).generate { palette ->
+        lateinit var bitmap : Bitmap
+        var uri : Uri? = null
+        if(getBitmapFromUri(songIcon!!)!=null) {
+            bitmap = getBitmapFromUri(songIcon!!)!!
+        }
+        else{
+            uri = Uri.parse("android.resource://com.droidbytes.musicplayer/drawable/music")
+            bitmap = getBitmapFromUri(uri)!!
+        }
+        Palette.from(bitmap!!).generate { palette ->
             val vibrantColor = palette?.getVibrantColor(ContextCompat.getColor(this, R.color.white))
             val gradientDrawable = GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM,
@@ -156,11 +170,20 @@ class ExternalAudioFileActivity : AppCompatActivity(), MediaPlayer.OnCompletionL
                 window.statusBarColor = vibrantColor
             }
         }
-        Glide.with(this@ExternalAudioFileActivity)
-            .load(songIcon)
-            .into(binding.songIcon)
-        binding.singerName.text = singerName
-        binding.songName.text = songName
+        if(uri!=null){
+            Glide.with(this@ExternalAudioFileActivity)
+                .load(uri)
+                .into(binding.songIcon)
+            binding.singerName.text = singerName
+            binding.songName.text = songName
+        }
+        else {
+            Glide.with(this@ExternalAudioFileActivity)
+                .load(songIcon)
+                .into(binding.songIcon)
+            binding.singerName.text = singerName
+            binding.songName.text = songName
+        }
     }
 
     private fun getSongDetails() {

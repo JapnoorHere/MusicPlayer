@@ -37,7 +37,6 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         var nowPlayingSongId: String = ""
         var vibrantColor: Int = 0
         var fav: Boolean = false
-        var originalMusicList: ArrayList<Songs>? = ArrayList()
     }
 
     private val updateSeekBarRunnable = object : Runnable {
@@ -154,8 +153,8 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         } catch (e: FileNotFoundException) {
             // Handle the FileNotFoundException here
             // For example, show an error message to the user
-            Toast.makeText(this, "File not found!", Toast.LENGTH_SHORT).show();
-            finish()
+//            Toast.makeText(this, "File not found!", Toast.LENGTH_SHORT).show();
+//            finish()
             e.printStackTrace();
         } catch (e: java.lang.IllegalArgumentException) {
             // Handle the IllegalArgumentException here
@@ -182,9 +181,7 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
             playMusic()
             nowPlayingSongId = songsList!![songPosition].id
         } catch (e: Exception) {
-            println(e.toString())
-            println(e.localizedMessage?.toString())
-            Toast.makeText(this, e.localizedMessage.toString(), Toast.LENGTH_LONG).show()
+            return
         }
     }
 
@@ -241,16 +238,23 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 
         gradientDrawable.cornerRadius = 0f
         binding.root.background = gradientDrawable
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.statusBarColor = darkColor
         }
+
         binding.singerName.text = songsList!![songPosition].artist
         binding.songName.text = songsList!![songPosition].name
-        println(songsList!![songPosition].albumArtUri)
-        Glide.with(this@MusicActivity).load(songsList!![songPosition].albumArtUri)
-            .into(binding.songIcon)
-    }
+//        println(songsList!![songPosition].albumArtUri)
+        val activity = this@MusicActivity
 
+        if (!activity.isDestroyed) {
+            Glide.with(activity)
+                .load(songsList!![songPosition].albumArtUri)
+                .into(binding.songIcon)
+        }
+
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -292,9 +296,6 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
 //        mediaPlayer.seekTo(position)
 //    }
 
-    fun isMusicPlaying(): Boolean {
-        return musicService!!.mediaPlayer.isPlaying
-    }
 
     override fun onPause() {
         super.onPause()
@@ -324,6 +325,5 @@ class MusicActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener {
         createMediaPlayer()
         setMusicLayout()
     }
-
 
 }

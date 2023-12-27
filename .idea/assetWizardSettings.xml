@@ -80,8 +80,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\sjapn\OneDrive\Desktop\Edit-Pro-PNG-For-Icon 1.png" />
-                                                <entry key="scalingPercent" value="52" />
+                                                <entry key="imagePath" value="C:\Users\sjapn\OneDrive\Desktop\icon.png" />
+                                                <entry key="scalingPercent" value="113" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -308,7 +308,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/more_vert/baseline_more_vert_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Users/sjapn/AppData/Local/Programs/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/delete/baseline_delete_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -318,7 +318,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_more_vert_24" />
+                            <entry key="outputName" value="baseline_delete_24" />
                             <entry key="sourceFile" value="D:\Projects\Github Android Projects\MusicPlayer" />
                           </map>
                         </option>
